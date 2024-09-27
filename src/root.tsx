@@ -4,12 +4,12 @@ import {
   RouterOutlet,
   ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
-import { RouterHead } from "./components/router-head/router-head";
+import { RouterHead } from "~/components/router-head/router-head";
 import { isDev } from "@builder.io/qwik/build";
 
-import "./global.css";
+import "~/global.css";
 
-export default component$(() => {
+export const Root = component$(() => {
   /**
    * The root of a QwikCity site always start with the <QwikCityProvider> component,
    * immediately followed by the document's <head> and <body>.

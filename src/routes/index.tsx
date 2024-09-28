@@ -1,24 +1,22 @@
-import { component$, useSignal } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
-  const clickCount = useSignal(0);
-
   return (
-    <div class="flex flex-col">
+    <>
       <h2>Helloooo...</h2>
       <h3>welcome to the snow clearing app</h3>
-      <button
-        class="cb-button"
-        onClick$={async () => {
-          clickCount.value++;
-          if (clickCount.value > 3) {
-            alert("it has snowed enough.");
-          }
-        }}
-      >
-        Let it snow
-      </button>
-      <p>snowed {clickCount.value} times</p>
-    </div>
+      <p>
+        lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </>
   );
 });

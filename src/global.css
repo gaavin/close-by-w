@@ -46,25 +46,12 @@
   --font-weight-large: 600;
   --font-weight-xl: 700;
 
-  --font-small: clamp(1rem, 1.25rem, 2rem);
+  --font-small: clamp(1rem, 1rem + 1vmax, 1.5rem);
   --font-medium: calc(var(--font-small) * 1.25);
   --font-large: calc(var(--font-medium) * 1.25);
   --font-xl: calc(var(--font-large) * 1.25);
 
-  --line-height-small: clamp(
-    var(--font-small),
-    calc(var(--font-small) * var(--font-small)),
-    var(--font-xl)
-  );
-  --line-height-medium: var(--line-height-small);
-  --line-height-large: calc(var(--line-height-medium) * 1.25);
-  --line-height-xl: calc(var(--line-height-large) * 1.25);
-
-  --space-small: clamp(
-    var(--line-height-small),
-    var(--line-height-medium),
-    var(--line-height-xl)
-  );
+  --space-small: calc(var(--font-small) * 1.25);
   --space-medium: calc(var(--space-small) * 1.25);
   --space-large: calc(var(--space-medium) * 1.25);
   --space-xl: calc(var(--space-large) * 1.25);
@@ -80,19 +67,19 @@ body {
 }
 
 .cb-root {
+  min-width: 100%;
+  min-height: 100%;
   display: grid;
   grid-template-areas:
     "header"
     "content"
     "footer";
-  grid-template-rows:
-    clamp(var(--space-medium), var(--space-base), var(--space-base))
-    1fr
-    clamp(var(--space-medium), var(--space-base), var(--space-base));
-  grid-template-columns: 1fr;
+  padding-inline: clamp(
+    var(--space-medium),
+    calc(var(--space-medium) + 1vmin),
+    var(--space-large)
+  );
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
 }
 
 .cb-header {
@@ -101,7 +88,6 @@ body {
 
 .cb-content {
   grid-area: content;
-  min-height: 100%;
   background-color: var(--dough);
   color: var(--dark-forest);
 }
@@ -115,26 +101,22 @@ body {
 h1 {
   font-size: var(--font-xl);
   font-weight: var(--font-weight-xl);
-  line-height: var(--line-height-xl);
 }
 
 h2 {
   font-size: var(--font-large);
   font-weight: var(--font-weight-large);
-  line-height: var(--line-height-large);
 }
 
 h3 {
   font-size: var(--font-medium);
   font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-medium);
 }
 
 p,
 span {
-  font-size: var(--font-base);
+  font-size: var(--font-small);
   font-weight: var(--font-weight-base);
-  line-height: var(--line-height-base);
 }
 
 .cb-button {

@@ -105,7 +105,6 @@ body {
   grid-area: content;
   background-color: var(--dough);
   color: var(--dark-forest);
-  min-height: 100%;
 }
 
 .cb-footer {

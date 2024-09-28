@@ -1,97 +1,5 @@
 @import "reset.css";
 
-:root {
-  --white: #ffffff;
-  --sea: #2274a5;
-  --dark-forest: #092327;
-  --dough: #e7dfc6;
-  --money: #138a36;
-  --ice: #4281a4;
-
-  --transition-speed: 0.4s;
-  --border-radius: 3px;
-
-  --small: 0.5rem;
-  --medium: 2rem;
-}
-
-html,
-body {
-  display: block;
-  width: 100%;
-  height: 100%;
-
-  background-color: var(--dark-forest);
-}
-
-.cb-root {
-  display: grid;
-  grid-template-areas:
-    ". . ."
-    ". cb-header ."
-    ". cb-content ."
-    ". cb-footer ."
-    ". . .";
-  color: var(--white);
-
-  gap: var(--medium);
-
-  font-size: 2rem;
-  font-weight: 600;
-  font-kerning: normal;
-  font-variant-ligatures: additional-ligatures;
-  font-family: system-ui;
-  text-rendering: optimizeLegibility;
-  text-wrap: pretty;
-}
-
-.cb-header {
-  grid-area: cb-header;
-}
-
-.cb-content {
-  grid-area: cb-content;
-  overflow-y: scroll;
-}
-
-.cb-footer {
-  grid-area: cb-footer;
-}
-
-.cb-button {
-  overflow: hidden;
-  animation: gradientShift 4s ease infinite;
-  background: linear-gradient(135deg, var(--dough), var(--ice));
-
-  color: var(--dark-forest);
-  border: var(--small);
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: box-shadow var(--transition-speed) ease;
-  box-shadow:
-    4px 4px 8px rgba(0, 0, 0, 0.2),
-    2px 2px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow intensity */
-  background-size: 100% 300%;
-}
-
-.cb-button:hover {
-  background-color: calc(var(--dough) * 0.5 + var(--ice) * 0.5);
-  box-shadow:
-    inset 4px 4px 8px rgba(0, 0, 0, 0.2),
-    4px 4px 8px rgba(0, 0, 0, 0.2);
-  transition: box-shadow var(--transition-speed) ease;
-}
-
-.cb-button:active {
-  animation: bounce var(--transition-speed);
-  box-shadow:
-    inset 2px 2px 4px rgba(0, 0, 0, 0.2),
-    inset 2px 2px 4px rgba(0, 0, 0, 0.15),
-    2px 2px 4px rgba(0, 0, 0, 0.2),
-    -2px -2px 4px rgba(0, 0, 0, 0.15);
-  transition: box-shadow var(--transition-speed) ease;
-}
-
 @keyframes bounce {
   0% {
     transform: scale(1);
@@ -123,4 +31,118 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+
+:root {
+  --white: #ffffff;
+  --sea: #2274a5;
+  --dark-forest: #092327;
+  --dough: #e7dfc6;
+  --money: #138a36;
+  --ice: #4281a4;
+
+  --transition-speed: 0.4s;
+  --border-radius: 0.4rem;
+
+  --tiny: 0.2rem;
+  --small: 0.4rem;
+  --medium: 1.6rem;
+}
+
+html,
+body {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  background-color: var(--dark-forest);
+}
+
+.cb-root {
+  padding: var(--medium);
+  gap: var(--medium);
+
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas:
+    ". . ."
+    ". cb-header ."
+    ". cb-content ."
+    ". cb-footer ."
+    ". . . ";
+
+  color: var(--white);
+
+  font-size: xx-large;
+  font-weight: 600;
+  font-family: system-ui;
+  text-wrap: pretty;
+}
+
+.cb-header {
+  grid-area: cb-header;
+}
+
+.cb-content {
+  grid-area: cb-content;
+  overflow-y: scroll;
+  background-color: var(--dough);
+  border-radius: var(--border-radius);
+  padding: var(--medium);
+  color: var(--dark-forest);
+  scrollbar-width: thin;
+}
+
+.cb-footer {
+  grid-area: cb-footer;
+}
+
+.cb-button {
+  animation: gradientShift 30s ease infinite;
+  background: linear-gradient(135deg, var(--dough), var(--ice));
+  color: var(--black);
+
+  border: solid var(--dough);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: box-shadow var(--transition-speed) ease;
+  box-shadow:
+    4px 4px 8px rgba(0, 0, 0, 0.2),
+    2px 2px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow intensity */
+  background-size: 200% 200%;
+}
+
+.cb-button:hover {
+  background-color: calc(var(--dough) * 0.5 + var(--ice) * 0.5);
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+    4px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow var(--transition-speed) ease;
+}
+
+.cb-button:active {
+  animation: bounce var(--transition-speed);
+  box-shadow:
+    inset 2px 2px 4px rgba(0, 0, 0, 0.2),
+    inset 2px 2px 4px rgba(0, 0, 0, 0.15),
+    2px 2px 4px rgba(0, 0, 0, 0.2),
+    -2px -2px 4px rgba(0, 0, 0, 0.15);
+  transition: box-shadow var(--transition-speed) ease;
+}
+
+.cb-card {
+  animation: gradientShift 30s ease infinite;
+  background: linear-gradient(135deg, var(--dough), var(--white));
+
+  color: var(--dark-forest);
+  border: var(--small);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: box-shadow var(--transition-speed) ease;
+  box-shadow:
+    4px 4px 8px rgba(0, 0, 0, 0.2),
+    2px 2px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow intensity */
+  background-size: 100% 300%;
 }

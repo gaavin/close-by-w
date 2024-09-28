@@ -1,20 +1,11 @@
 import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
-    <>
-      <button class="cb-button">Checkout Now</button>
-    </>
+    <div class="flex flex-col">
+      <h2>Helloooo...</h2>
+      <h3>welcome to the snow clearing app</h3>
+      <button class="cb-button">Let it snow</button>
+    </div>
   );
 });
-
-export const head: DocumentHead = {
-  title: "Welcome to Qwik",
-  meta: [
-    {
-      name: "description",
-      content: "Qwik site description",
-    },
-  ],
-};

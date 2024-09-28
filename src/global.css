@@ -47,33 +47,30 @@
   --font-weight-large: 600;
   --font-weight-xl: 700;
 
-  --_calc_font-min: clamp(1rem, 1rem + 1vmin, 1.5rem);
-  --font-base: var(--_calc_font-min);
+  --font-base: clamp(1vh + 1vmin, calc(1vmin + 1vh), 1.5vh);
   --font-small: calc(var(--font-base) * 1.25);
   --font-medium: calc(var(--font-base) * 1.5);
   --font-large: calc(var(--font-base) * 2);
   --font-xl: calc(var(--font-base) * 2.5);
 
-  --_calc_line-height-base: clamp(
+  --line-height-base: clamp(
     var(--font-base),
     calc(var(--font-base) * 2),
     var(--font-xl)
   );
-  --line-height-base: var(--_calc_line-height-base);
   --line-height-small: calc(var(--line-height-base) * 0.75);
   --line-height-medium: var(--line-height-base);
   --line-height-large: calc(var(--line-height-base) * 1.25);
   --line-height-xl: calc(var(--line-height-base) * 1.5);
 
-  --_calc-space-base: clamp(
+  --space-base: clamp(
     var(--line-height-base),
-    calc(var(--line-height-base) * 2),
-    var(--font-base)
+    var(--line-height-base),
+    var(--line-height-xl)
   );
 
-  --space-base: var(--_calc-space-base);
-  --space-x: calc(var(--space-base) * 2);
-  --space-y: var(--space-base);
+  --space-base-x: calc(var(--space-base) / 2);
+  --space-base-y: var(--space-base);
 }
 
 html,
@@ -94,9 +91,8 @@ body {
     "header"
     "content"
     "footer";
-
-  padding: var(--space-y) var(--space-x);
   justify-content: center;
+  padding: var(--padding-base-y) var(--padding-base-x);
 }
 
 .cb-header {
@@ -107,7 +103,6 @@ body {
   grid-area: content;
   background-color: var(--dough);
   color: var(--dark-forest);
-  padding: var(--space-y) var(--space-x);
 }
 
 .cb-footer {

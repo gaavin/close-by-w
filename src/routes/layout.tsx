@@ -15,15 +15,15 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 export default component$(() => {
   return (
     <div class="cb-root">
-      <div class="cb-header">
-        <button class="cb-button">Save</button>
-      </div>
-      <div class="cb-content">
+      <header class="cb-header">
+        <h1>Snow Clearing</h1>
+      </header>
+      <main class="cb-content">
         <Slot />
-      </div>
-      <div class="cb-footer">
+      </main>
+      <footer class="cb-footer">
         <button class="cb-button">Grand Total</button>
-      </div>
+      </footer>
     </div>
   );
 });

@@ -9,6 +9,7 @@
   --ice: #4281a4;
 
   --transition-speed: 0.4s;
+  --border-radius: 3px;
 
   --small: 0.5rem;
   --medium: 2rem;
@@ -16,51 +17,41 @@
 
 html,
 body {
-  overflow: hidden;
+  display: block;
+  width: 100%;
+  height: 100%;
+
   background-color: var(--dark-forest);
-  color: var(--white);
-
-  text-rendering: optimizeLegibility;
-  font-size-adjust: 1.2;
-  font-weight: 600;
-  font-kerning: normal;
-  font-family: "Inter", sans-serif;
-  text-wrap: pretty;
-
-  min-height: 100vh;
-  min-width: 100vw;
 }
 
 .cb-root {
-  padding: var(--medium);
   display: grid;
-  grid-template-rows: 1fr 12fr 1fr;
-  grid-template-columns: auto;
   grid-template-areas:
-    "cb-header"
-    "cb-content"
-    "cb-footer";
-  grid-row-gap: var(--medium);
+    ". . ."
+    ". cb-header ."
+    ". cb-content ."
+    ". cb-footer ."
+    ". . .";
+  color: var(--white);
 
-  align-items: center;
-  justify-content: center;
+  gap: var(--medium);
+
+  font-size: 2rem;
+  font-weight: 600;
+  font-kerning: normal;
+  font-variant-ligatures: additional-ligatures;
+  font-family: system-ui;
+  text-rendering: optimizeLegibility;
+  text-wrap: pretty;
 }
 
 .cb-header {
   grid-area: cb-header;
-  display: flex;
-  flex-direction: row;
-  gap: var(--small);
-  align-items: center;
 }
 
 .cb-content {
   grid-area: cb-content;
   overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-  gap: var(--small);
-  height: 100%;
 }
 
 .cb-footer {
@@ -68,25 +59,19 @@ body {
 }
 
 .cb-button {
+  overflow: hidden;
   animation: gradientShift 4s ease infinite;
   background: linear-gradient(135deg, var(--dough), var(--ice));
 
   color: var(--dark-forest);
-  border: 4px solid color-mix(in hsl shorter hue, var(--ice), 50%);
-  border-radius: 33px;
+  border: var(--small);
+  border-radius: var(--border-radius);
   cursor: pointer;
   transition: box-shadow var(--transition-speed) ease;
   box-shadow:
     4px 4px 8px rgba(0, 0, 0, 0.2),
     2px 2px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow intensity */
   background-size: 100% 300%;
-
-  font-size-adjust: 1;
-  min-height: 4rem;
-  max-height: 4rem;
-
-  min-width: 6rem;
-  max-width: 7rem;
 }
 
 .cb-button:hover {
@@ -95,7 +80,6 @@ body {
     inset 4px 4px 8px rgba(0, 0, 0, 0.2),
     4px 4px 8px rgba(0, 0, 0, 0.2);
   transition: box-shadow var(--transition-speed) ease;
-  padding: var(--small);
 }
 
 .cb-button:active {
@@ -105,6 +89,7 @@ body {
     inset 2px 2px 4px rgba(0, 0, 0, 0.15),
     2px 2px 4px rgba(0, 0, 0, 0.2),
     -2px -2px 4px rgba(0, 0, 0, 0.15);
+  transition: box-shadow var(--transition-speed) ease;
 }
 
 @keyframes bounce {

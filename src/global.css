@@ -42,7 +42,7 @@
   --transition-speed: 0.4s;
   --border-radius: 8px;
 
-  --font-tiny: clamp(1rem, 1rem + 1.5vmax, 2rem) / 3;
+  --font-tiny: calc(clamp(1rem, 1rem + 1.5vmax, 2rem) / 3);
   --font-small: calc(var(--font-tiny) * 2);
   --font-medium: calc(var(--font-tiny) * 3);
   --font-large: calc(var(--font-tiny) * 4);
@@ -81,11 +81,14 @@ span {
 
 .cb-root {
   gap: var(--font-small);
-  padding: var(--font-small);
+  padding-top: var(--font-small);
+  padding-bottom: var(--font-small);
+  justify-self: center;
 
   display: grid;
-  width: 100%;
+  display: grid;
   height: 100%;
+  width: clamp(300px, 90%, 900px);
   grid-template-areas:
     "cb-header"
     "cb-content"

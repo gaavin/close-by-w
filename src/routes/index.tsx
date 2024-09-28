@@ -9,7 +9,7 @@ export default component$(() => {
       <h3>welcome to the snow clearing app</h3>
       <button
         class="cb-button"
-        onClick$={() => {
+        onClick$={async () => {
           clickCount.value++;
           if (clickCount.value > 3) {
             alert("it has snowed enough.");

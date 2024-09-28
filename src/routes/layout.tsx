@@ -13,11 +13,11 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 };
 
 export const head: DocumentHead = {
-  title: "Snow Clearing",
+  title: "gavinpower.dev",
   meta: [
     {
-      name: "description",
-      content: "Snow Clearing",
+      name: "gavinpower.dev",
+      content: "personal website",
     },
   ],
 };
@@ -26,13 +26,13 @@ export default component$(() => {
   return (
     <div class="cb-root">
       <header class="cb-header">
-        <h1>Snow Clearing</h1>
+        <h1>gavinpower.dev</h1>
       </header>
       <main class="cb-content">
         <Slot />
       </main>
       <footer class="cb-footer">
-        <p>© Mr Beast</p>
+        <h4>©2024 Mr Beast and Chris Chandler</h4>
       </footer>
     </div>
   );

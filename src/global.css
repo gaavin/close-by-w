@@ -92,6 +92,8 @@ body {
     "content"
     "footer";
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   padding: var(--padding-base-y) var(--padding-base-x);
 }
 
@@ -103,6 +105,7 @@ body {
   grid-area: content;
   background-color: var(--dough);
   color: var(--dark-forest);
+  min-height: 100%;
 }
 
 .cb-footer {

@@ -35,47 +35,68 @@
 
 :root {
   --white: #ffffff;
-  --sea: #2274a5;
   --dark-forest: #092327;
   --dough: #e7dfc6;
-  --money: #138a36;
   --ice: #4281a4;
 
   --transition-speed: 0.4s;
-  --border-radius: 0.4rem;
+  --border-radius: 1vmax;
 
-  --tiny: 0.2rem;
-  --small: 0.4rem;
-  --medium: 1.6rem;
+  --font-xs: clamp(0.5rem, 0.5rem + 1vmax, 1rem);
+  --font-small: clamp(1rem, 1rem + 1vmax, 1.5rem);
+  --font-medium: clamp(1.5rem, 1.5rem + 1vmax, 2rem);
+  --font-large: clamp(2rem, 2rem + 1vmax, 3rem);
+  --font-xl: clamp(3rem, 3rem + 1vmax, 4rem);
 }
 
 html,
 body {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 
   overflow: hidden;
   background-color: var(--dark-forest);
 }
 
+h1 {
+  font-size: var(--font-xl);
+}
+
+h2 {
+  font-size: var(--font-large);
+}
+
+h3 {
+  font-size: var(--font-medium);
+}
+
+p {
+  font-size: var(--font-small);
+}
+
+span {
+  font-size: var(--font-small);
+}
+
 .cb-root {
-  padding: var(--medium);
-  gap: var(--medium);
+  gap: var(--font-small);
+  padding: var(--font-medium);
 
   display: grid;
   width: 100%;
   height: 100%;
   grid-template-areas:
-    ". . ."
-    ". cb-header ."
-    ". cb-content ."
-    ". cb-footer ."
-    ". . . ";
+    "cb-header"
+    "cb-content"
+    "cb-footer";
+
+  grid-template-rows: min-content auto min-content;
+  grid-template-columns: 1fr;
 
   color: var(--white);
 
-  font-size: xx-large;
+  font-size: var(--font-small);
   font-weight: 600;
   font-family: system-ui;
   text-wrap: pretty;
@@ -83,28 +104,35 @@ body {
 
 .cb-header {
   grid-area: cb-header;
+  width: 100%;
+  height: 100%;
 }
 
 .cb-content {
+  padding: var(--font-small);
+  width: 100%;
+  height: 100%;
   grid-area: cb-content;
   overflow-y: scroll;
   background-color: var(--dough);
   border-radius: var(--border-radius);
-  padding: var(--medium);
   color: var(--dark-forest);
   scrollbar-width: thin;
 }
 
 .cb-footer {
+  width: 100%;
+  height: 100%;
   grid-area: cb-footer;
 }
 
 .cb-button {
   animation: gradientShift 30s ease infinite;
   background: linear-gradient(135deg, var(--dough), var(--ice));
-  color: var(--black);
+  color: var(--dark-forest);
+  lighting-color: var(--dough);
 
-  border: solid var(--dough);
+  border: solid var(--dark-forest);
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: box-shadow var(--transition-speed) ease;

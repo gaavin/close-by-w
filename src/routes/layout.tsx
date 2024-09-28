@@ -32,7 +32,7 @@ export default component$(() => {
         <Slot />
       </main>
       <footer class="cb-footer">
-        <button class="cb-button">Grand Total</button>
+        <p>© Mr Beast</p>
       </footer>
     </div>
   );

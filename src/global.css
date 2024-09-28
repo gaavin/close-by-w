@@ -40,13 +40,13 @@
   --ice: #4281a4;
 
   --transition-speed: 0.4s;
-  --border-radius: 1vmax;
+  --border-radius: 8px;
 
-  --font-xs: clamp(0.5rem, 0.5rem + 1vmax, 1rem);
-  --font-small: clamp(1rem, 1rem + 1vmax, 1.5rem);
-  --font-medium: clamp(1.5rem, 1.5rem + 1vmax, 2rem);
-  --font-large: clamp(2rem, 2rem + 1vmax, 3rem);
-  --font-xl: clamp(3rem, 3rem + 1vmax, 4rem);
+  --font-tiny: clamp(1rem, 1rem + 1.5vmax, 2rem) / 3;
+  --font-small: calc(var(--font-tiny) * 2);
+  --font-medium: calc(var(--font-tiny) * 3);
+  --font-large: calc(var(--font-tiny) * 4);
+  --font-xl: calc(var(--font-tiny) * 5);
 }
 
 html,
@@ -81,7 +81,7 @@ span {
 
 .cb-root {
   gap: var(--font-small);
-  padding: var(--font-medium);
+  padding: var(--font-small);
 
   display: grid;
   width: 100%;

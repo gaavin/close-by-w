@@ -87,8 +87,6 @@ span {
 
   display: grid;
   display: grid;
-  height: 100%;
-  width: clamp(300px, 90%, 900px);
   grid-template-areas:
     "cb-header"
     "cb-content"

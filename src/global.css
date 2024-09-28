@@ -83,6 +83,7 @@ body {
   color: var(--white);
   display: flex;
   flex-direction: column;
+  padding: var(--padding-base-y) var(--padding-base-x);
 }
 
 .cb-root {
@@ -94,7 +95,6 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: var(--padding-base-y) var(--padding-base-x);
 }
 
 .cb-header {
@@ -103,6 +103,7 @@ body {
 
 .cb-content {
   grid-area: content;
+  min-height: 100%;
   background-color: var(--dough);
   color: var(--dark-forest);
 }

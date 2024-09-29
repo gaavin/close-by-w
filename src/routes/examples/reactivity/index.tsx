@@ -12,7 +12,7 @@ export const Reactivity = component$(() => {
   return (
     <>
       <button
-        class="cb-button"
+        class="button"
         onClick$={async () => {
           clickCount.value++;
         }}

@@ -38,6 +38,9 @@
   --dark-forest: #092327;
   --dough: #e7dfc6;
   --ice: #4281a4;
+  --light-doughy-ice: color-mix(in sRGB, var(--ice), var(--dough) 50%);
+
+  --background: linear-gradient(135deg, var(--ice), 10%, var(--dark-forest));
 
   --transition-speed: 0.4s;
 
@@ -62,51 +65,43 @@
 html,
 body {
   display: inline-flex;
-  justify-content: center;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
-  background-color: var(--dark-forest);
+  background: var(--background);
   color: var(--white);
   font-family: system-ui, sans-serif;
   font-weight: var(--font-weight-small);
+
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) var(--transition-speed);
+  border-radius: var(--accent-radius);
+  justify-content: center;
+  align-items: center;
+  padding-inline: var(--space-xl);
 }
 
-.cb-container {
-  display: block;
-  max-height: 100%;
-  max-width: fit-content;
-  background-color: var(--dough);
-  backdrop-filter: blur(10px);
-  overflow-y: auto;
-}
-
-.cb-content {
-  display: block;
-  height: 100%;
+.content {
+  background: var(--dough);
   color: var(--dark-forest);
-  padding: var(--space-small) var(--space-small) var(--space-xl) var(--space-xl);
   overflow-y: scroll;
+  padding-inline: var(--space-small) var(--space-xl);
 }
 
-.cb-header {
-  display: block;
-  position: sticky;
-  top: 0;
-  background-color: var(--dark-forest);
+.header {
+  backdrop-filter: blur(var(--space-medium));
   text-align: center;
+  text-wrap-mode: nowrap;
 }
 
-.cb-footer {
-  display: block;
-  position: sticky;
-  bottom: 0;
-  background-color: var(--dark-forest);
+.footer {
   text-align: center;
+  text-wrap-mode: nowrap;
 }
 
 h1 {
   font-size: var(--font-xl);
   font-weight: var(--font-weight-xl);
+  text-wrap-mode: nowrap; /* A heading should not wrap, let content flow around the heading */
 }
 
 h2 {
@@ -125,13 +120,9 @@ span {
   font-weight: var(--font-weight-small);
 }
 
-.cb-button {
+.button {
   animation: gradientShift 30s ease infinite;
-  background: linear-gradient(
-    135deg,
-    var(--dough),
-    color-mix(in srgb, var(--ice) 60%, var(--dough))
-  );
+
   filter: contrast(1.2);
   color: var(--dark-forest);
   mix-blend-mode: multiply;
@@ -149,7 +140,7 @@ span {
   background-size: 200% 300%;
 }
 
-.cb-button:hover {
+.button:hover {
   background-color: rgba(231, 223, 198, 0.8);
   transition:
     box-shadow var(--transition-speed) ease,
@@ -159,7 +150,7 @@ span {
     4px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.cb-button:active {
+.button:active {
   animation: bounce var(--transition-speed);
   transition:
     box-shadow var(--transition-speed) ease,
@@ -169,10 +160,4 @@ span {
     inset 2px 2px 4px rgba(0, 0, 0, 0.15),
     2px 2px 4px rgba(0, 0, 0, 0.2),
     -2px -2px 4px rgba(0, 0, 0, 0.15);
-}
-
-.cb-icon {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
 }

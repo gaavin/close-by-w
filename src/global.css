@@ -69,7 +69,7 @@ main {
   width: min-content;
   background: var(--dough);
   color: var(--dark-forest);
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-color: var(--dark-forest) var(--dough);
   scrollbar-width: thin;
   padding-block: var(--size-sm);

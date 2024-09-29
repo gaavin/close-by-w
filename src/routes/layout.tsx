@@ -25,13 +25,13 @@ export const head: DocumentHead = {
 export default component$(() => {
   return (
     <>
-      <header class="header">
+      <header>
         <h4>gavinpower.dev</h4>
       </header>
-      <main class="content">
+      <main>
         <Slot />
       </main>
-      <footer class="footer">
+      <footer>
         <span>©2024 Mr Beast and Chris Chandler</span>
       </footer>
     </>

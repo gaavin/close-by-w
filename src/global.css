@@ -59,7 +59,7 @@ body {
   transition: var(--transition-speed);
 }
 
-.content {
+main {
   display: inline-block;
   border-radius: 0.3rem;
   height: fit-content;
@@ -69,12 +69,12 @@ body {
   padding-block: var(--space-sm) var(--space-sm) var(--space-sm) var(--space-sm);
 }
 
-.header {
+header {
   text-align: center;
   text-wrap-mode: nowrap;
 }
 
-.footer {
+footer {
   text-align: center;
   text-wrap-mode: nowrap;
 }

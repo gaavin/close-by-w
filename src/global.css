@@ -42,6 +42,8 @@
   --ice: #4281a4;
   --light-doughy-ice: color-mix(in sRGB, var(--ice), var(--dough) 50%);
   --background: linear-gradient(135deg, var(--ice), 10%, var(--dark-forest));
+
+  --border-radius: calc(var(--size-sm) / 2);
 }
 
 html,
@@ -57,18 +59,18 @@ body {
   transition: var(--transition-speed);
   justify-content: center;
   align-items: center;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
+  border-radius: var(--border-radius);
 }
 
 main {
   display: block;
-  border-radius: 0.3rem;
   width: min-content;
   background: var(--dough);
   color: var(--dark-forest);
   overflow-y: scroll;
-  scrollbar-width: none;
+  scrollbar-color: var(--dark-forest) var(--dough);
   padding-block: var(--size-sm);
   padding-inline: var(--size-lg);
 }

@@ -66,6 +66,7 @@ main {
   background: var(--dough);
   color: var(--dark-forest);
   overflow-y: scroll;
+  padding-inline: var(--size-md);
 }
 
 header {

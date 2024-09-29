@@ -61,7 +61,8 @@
 
 html,
 body {
-  display: block;
+  display: inline-flex;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   background-color: var(--dark-forest);
@@ -73,6 +74,7 @@ body {
 .cb-container {
   display: block;
   max-height: 100%;
+  max-width: fit-content;
   background-color: var(--dough);
   backdrop-filter: blur(10px);
   overflow-y: auto;

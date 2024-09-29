@@ -46,7 +46,7 @@
   --font-weight-large: 600;
   --font-weight-xl: 700;
 
-  --font-small: clamp(1rem, 1rem + 1vmax, 1.5rem);
+  --font-small: clamp(1rem, 1.2rem + 0.5vw, 1.5rem);
   --font-medium: calc(var(--font-small) * 1.25);
   --font-large: calc(var(--font-medium) * 1.25);
   --font-xl: calc(var(--font-large) * 1.25);
@@ -55,6 +55,10 @@
   --space-medium: calc(var(--space-small) * 1.25);
   --space-large: calc(var(--space-medium) * 1.25);
   --space-xl: calc(var(--space-large) * 1.25);
+
+  --padding: calc(var(--space-small) / 2);
+
+  --linegap-override: calc(var(--font-small) * 0.25);
 }
 
 html,
@@ -64,36 +68,26 @@ body {
   background-color: var(--dark-forest);
   font-family: system-ui, sans-serif;
   color: var(--white);
+  overflow-x: hidden;
+  display: flow-root;
+  align-content: center;
 }
 
 .cb-root {
-  min-width: 100%;
-  min-height: 100%;
-  display: grid;
-  grid-template-areas:
-    "header"
-    "content"
-    "footer";
-  padding-inline: clamp(
-    var(--space-medium),
-    calc(var(--space-medium) + 1vmin),
-    var(--space-large)
-  );
-  justify-content: center;
-}
-
-.cb-header {
-  grid-area: header;
+  padding: var(--padding);
 }
 
 .cb-content {
-  grid-area: content;
   background-color: var(--dough);
   color: var(--dark-forest);
 }
 
+.cb-header {
+  background-color: var(--dark-forest);
+  text-align: center;
+}
+
 .cb-footer {
-  grid-area: footer;
   background-color: var(--dark-forest);
   text-align: center;
 }
@@ -117,6 +111,7 @@ p,
 span {
   font-size: var(--font-small);
   font-weight: var(--font-weight-base);
+  line-gap-override: var(--linegap-override);
 }
 
 .cb-button {

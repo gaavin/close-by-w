@@ -26,7 +26,7 @@ export default component$(() => {
   return (
     <div class="cb-root">
       <header class="cb-header">
-        <h1>gavinpower.dev</h1>
+        <p>gavinpower.dev</p>
       </header>
       <main class="cb-content">
         <Slot />

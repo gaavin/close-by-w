@@ -24,7 +24,7 @@ export const head: DocumentHead = {
 
 export default component$(() => {
   return (
-    <div class="cb-root">
+    <div class="cb-container">
       <header class="cb-header">
         <p>gavinpower.dev</p>
       </header>

@@ -11,6 +11,14 @@ export default component$(() => {
           soon you'll find blog posts, personal projects, and my resume 🐈
         </p>
         <br />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          facilisi.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          facilisi.
+        </p>
       </h1>
       <button class="cb-button">Click me</button>
     </>

@@ -49,7 +49,7 @@
 html,
 body {
   width: 100vi;
-  height: 100vh;
+  height: 100dvh;
   display: inline-flex;
   flex-direction: column;
   background: var(--background);

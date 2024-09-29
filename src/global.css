@@ -63,31 +63,37 @@
 
 html,
 body {
-  max-width: 100vw;
-  min-height: 100vh;
   background-color: var(--dark-forest);
   font-family: system-ui, sans-serif;
   color: var(--white);
   overflow-x: hidden;
-  display: flow-root;
-  align-content: center;
-}
-
-.cb-root {
+  height: 100vh;
+  width: 100vw;
+  justify-items: center;
   padding: var(--padding);
 }
 
+.cb-root {
+  display: flow-root;
+  justify-items: center;
+  max-width: clamp(var(--space-xl), 95%, calc(var(--space-xl) * 10));
+}
+
 .cb-content {
+  display: block;
+  padding: var(--padding);
   background-color: var(--dough);
   color: var(--dark-forest);
 }
 
 .cb-header {
+  display: block;
   background-color: var(--dark-forest);
   text-align: center;
 }
 
 .cb-footer {
+  display: block;
   background-color: var(--dark-forest);
   text-align: center;
 }

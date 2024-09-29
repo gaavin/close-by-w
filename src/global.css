@@ -75,7 +75,6 @@ body {
   display: block;
   max-height: 100%;
   overflow-y: scroll;
-  scrollbar-width: none;
 }
 
 .cb-content {

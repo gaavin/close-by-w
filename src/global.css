@@ -74,12 +74,12 @@ body {
 
 .cb-root {
   display: flow-root;
-  padding-inline: var(--padding);
   justify-self: center;
+  max-width: clamp(calc(var(--space-xl) * 20), 90%, 100%);
+  padding: var(--padding);
 }
 
 .cb-content {
-  display: block;
   padding: var(--padding);
   background-color: var(--dough);
   color: var(--dark-forest);

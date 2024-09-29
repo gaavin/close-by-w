@@ -29,7 +29,7 @@
   --weight-lg: 600;
   --weight-xl: 700;
 
-  --size-sm: clamp(1rem, 2.5vw, 2rem);
+  --size-sm: clamp(1rem, 2.5vi, 2rem);
   --size-md: calc(var(--size-sm) * var(--step));
   --size-lg: calc(var(--size-md) * var(--step));
   --size-xl: calc(var(--size-lg) * var(--step));
@@ -48,10 +48,10 @@
 
 html,
 body {
+  width: 100vw;
+  height: 100vh;
   display: inline-flex;
   flex-direction: column;
-  width: 100vi;
-  height: 100vh;
   background: var(--background);
   color: var(--white);
   font-family: var(--font-family);
@@ -61,7 +61,7 @@ body {
   align-items: center;
   overflow-y: hidden;
   overflow-x: hidden;
-  border-radius: var(--border-radius);
+  padding-inline: var(--size-xl);
 }
 
 main {
@@ -73,6 +73,7 @@ main {
   scrollbar-color: var(--dark-forest) var(--dough);
   padding-block: var(--size-sm);
   padding-inline: var(--size-lg);
+  border-radius: var(--border-radius);
 }
 
 header {

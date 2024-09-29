@@ -48,34 +48,39 @@ html,
 body {
   display: inline-flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100vi;
   height: 100vh;
   background: var(--background);
   color: var(--white);
   font-family: var(--font-family);
   font-weight: var(--weight-sm);
   transition: var(--transition-speed);
-  align-self: center;
-  padding-inline: var(--size-md);
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
 main {
-  display: inline-block;
+  display: block;
   border-radius: 0.3rem;
-  height: fit-content;
+  width: min-content;
   background: var(--dough);
   color: var(--dark-forest);
   overflow-y: scroll;
-  padding-inline: var(--size-md);
+  scrollbar-width: none;
+  padding-block: var(--size-sm);
+  padding-inline: var(--size-lg);
 }
 
 header {
+  display: block;
   text-align: center;
   text-wrap-mode: nowrap;
 }
 
 footer {
+  display: block;
   text-align: center;
   text-wrap-mode: nowrap;
 }

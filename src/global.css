@@ -61,10 +61,9 @@
 
 html,
 body {
-  display: flow-root;
+  display: block;
   width: 100vw;
   height: 100vh;
-
   background-color: var(--dark-forest);
   color: var(--white);
   font-family: system-ui, sans-serif;
@@ -72,6 +71,7 @@ body {
 }
 
 .cb-container {
+  display: block;
   max-height: 100%;
   background-color: var(--dough);
   backdrop-filter: blur(10px);
@@ -79,6 +79,7 @@ body {
 }
 
 .cb-content {
+  display: block;
   height: 100%;
   color: var(--dark-forest);
   padding: var(--space-small) var(--space-small) var(--space-xl) var(--space-xl);
@@ -86,6 +87,7 @@ body {
 }
 
 .cb-header {
+  display: block;
   position: sticky;
   top: 0;
   background-color: var(--dark-forest);
@@ -93,6 +95,7 @@ body {
 }
 
 .cb-footer {
+  display: block;
   position: sticky;
   bottom: 0;
   background-color: var(--dark-forest);

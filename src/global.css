@@ -29,7 +29,7 @@
   --weight-lg: 600;
   --weight-xl: 700;
 
-  --size-sm: clamp(1rem, 2.5vi, 2rem);
+  --size-sm: clamp(1rem, 1.5vi, 2rem);
   --size-md: calc(var(--size-sm) * var(--step));
   --size-lg: calc(var(--size-md) * var(--step));
   --size-xl: calc(var(--size-lg) * var(--step));

@@ -76,13 +76,12 @@ body {
   background-color: var(--dough);
   backdrop-filter: blur(10px);
   overflow-y: auto;
-  padding: var(--space-small) var(--space-xl);
 }
 
 .cb-content {
   height: 100%;
   color: var(--dark-forest);
-  padding: var(--space-small) var(--space-xl);
+  padding: var(--space-small) var(--space-small) var(--space-xl) var(--space-xl);
 }
 
 .cb-header {

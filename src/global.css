@@ -51,10 +51,10 @@
   --font-large: clamp(3rem, 8vw - 2rem, 6rem);
   --font-xl: clamp(4rem, 8vw - 2rem, 8rem);
 
-  --space-small: calc(var(--font-small) * 1.25);
-  --space-medium: calc(var(--space-small) * 1.25);
-  --space-large: calc(var(--space-medium) * 1.25);
-  --space-xl: calc(var(--space-large) * 1.25);
+  --space-small: calc(var(--font-small) / 2);
+  --space-medium: calc(var(--font-medium) / 2);
+  --space-large: calc(var(--font-large) / 2);
+  --space-xl: calc(var(--font-xl) / 2);
 
   --accent-size: 2px;
   --accent-radius: 8px;
@@ -74,10 +74,8 @@ body {
 
 .cb-root {
   display: flow-root;
-  max-width: calc(var(--space-large) * var(--space-large));
-  display: flow-root;
-  justify-items: center;
   padding-inline: var(--padding);
+  justify-self: center;
 }
 
 .cb-content {

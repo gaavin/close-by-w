@@ -8,7 +8,7 @@ export default component$(() => {
       <p>
         Hi, my website is under construction right now, but if you're interested
         in personal projects of mine strung with development ramblings and
-        examples, or here for my resume, then please bookmark this page 🐈
+        examples, or are here for my resume, then please bookmark this page 🐈
       </p>
     </>
   );

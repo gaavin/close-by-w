@@ -82,6 +82,7 @@ body {
   height: 100%;
   color: var(--dark-forest);
   padding: var(--space-small) var(--space-small) var(--space-xl) var(--space-xl);
+  overflow-y: scroll;
 }
 
 .cb-header {

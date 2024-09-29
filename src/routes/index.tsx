@@ -12,14 +12,6 @@ export default component$(() => {
           ramblings and examples, or here for my resume, then please bookmark
           this page 🐈
         </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          facilisi.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          facilisi.
-        </p>
       </h1>
       <button class="button">Click me</button>
     </>

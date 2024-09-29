@@ -41,20 +41,23 @@
 
   --transition-speed: 0.4s;
 
-  --font-weight-small: 400;
+  --font-weight-small: 300;
   --font-weight-medium: 500;
-  --font-weight-large: 600;
-  --font-weight-xl: 700;
+  --font-weight-large: 700;
+  --font-weight-xl: 900;
 
-  --font-small: clamp(1rem, 1.2rem + 0.5vw, 1.5rem);
-  --font-medium: calc(var(--font-small) * 1.25);
-  --font-large: calc(var(--font-medium) * 1.25);
-  --font-xl: calc(var(--font-large) * 1.25);
+  --font-small: clamp(1.5rem, 8vw - 2rem, 3rem);
+  --font-medium: clamp(2rem, 8vw - 2rem, 4rem);
+  --font-large: clamp(3rem, 8vw - 2rem, 6rem);
+  --font-xl: clamp(4rem, 8vw - 2rem, 8rem);
 
   --space-small: calc(var(--font-small) * 1.25);
   --space-medium: calc(var(--space-small) * 1.25);
   --space-large: calc(var(--space-medium) * 1.25);
   --space-xl: calc(var(--space-large) * 1.25);
+
+  --accent-size: 2px;
+  --accent-radius: 8px;
 
   --padding: calc(var(--space-small) / 2);
 }
@@ -85,13 +88,11 @@ body {
 }
 
 .cb-header {
-  display: block;
   background-color: var(--dark-forest);
   text-align: center;
 }
 
 .cb-footer {
-  display: block;
   background-color: var(--dark-forest);
   text-align: center;
 }
@@ -114,8 +115,7 @@ h3 {
 p,
 span {
   font-size: var(--font-small);
-  font-weight: var(--font-weight-base);
-  line-gap-override: var(--linegap-override);
+  font-weight: var(--font-weight-small);
 }
 
 .cb-button {
@@ -123,8 +123,9 @@ span {
   background: linear-gradient(
     135deg,
     var(--dough),
-    color-mix(in srgb, var(--ice) 10%, var(--dark-forest))
+    color-mix(in srgb, var(--ice) 60%, var(--dough))
   );
+  filter: contrast(1.2);
   color: var(--dark-forest);
   mix-blend-mode: multiply;
   lighting-color: var(--ice);

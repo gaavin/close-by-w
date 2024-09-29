@@ -26,13 +26,13 @@ export default component$(() => {
   return (
     <>
       <header class="header">
-        <p>gavinpower.dev</p>
+        <h4>gavinpower.dev</h4>
       </header>
       <main class="content">
         <Slot />
       </main>
       <footer class="footer">
-        <h4>©2024 Mr Beast and Chris Chandler</h4>
+        <span>©2024 Mr Beast and Chris Chandler</span>
       </footer>
     </>
   );

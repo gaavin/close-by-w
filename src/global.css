@@ -21,45 +21,28 @@
   }
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 :root {
+  --_step: 1.6180339887498948482;
+  --_temporal-step: 100ms;
+
+  --font-size-sm: clamp(1rem, 2.5vw, 2rem);
+  --font-size-md: calc(var(--font-size-sm) * var(--_step));
+  --font-size-lg: calc(var(--font-size-md) * var(--_step));
+  --font-size-xl: calc(var(--font-size-lg) * var(--_step));
+
+  --font-family: system-ui, sans-serif;
+
+  --font-weight-sm: 400;
+  --font-weight-md: 500;
+  --font-weight-lg: 600;
+  --font-weight-xl: 700;
+
   --white: #ffffff;
   --dark-forest: #092327;
   --dough: #e7dfc6;
   --ice: #4281a4;
   --light-doughy-ice: color-mix(in sRGB, var(--ice), var(--dough) 50%);
-
   --background: linear-gradient(135deg, var(--ice), 10%, var(--dark-forest));
-
-  --transition-speed: 0.2s;
-
-  --size: clamp(1rem, 2vw, 1.25rem);
-
-  --font-weight-small: 400;
-  --font-weight-medium: 500;
-  --font-weight-large: 600;
-  --font-weight-xl: 700;
-
-  --font-small: calc(var(--size));
-  --font-medium: calc(var(--font-small) * 1.25);
-  --font-large: calc(var(--font-medium) * 1.25);
-  --font-xl: calc(var(--font-large) * 1.25);
-
-  --space-small: calc(var(--font-small) / 2);
-  --space-medium: calc(var(--font-medium) / 2);
-  --space-large: calc(var(--font-large) / 2);
-  --space-xl: calc(var(--font-xl) / 2);
 }
 
 html,
@@ -70,27 +53,25 @@ body {
   height: 100vh;
   background: var(--background);
   color: var(--white);
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-family);
   font-weight: var(--font-weight-small);
 
-  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) var(--transition-speed);
-  border-radius: var(--accent-radius);
-
-  padding-inline: clamp(0px, 2vw, var(--space-xl));
-  align-self: center;
+  transition: var(--transition-speed);
 }
 
 .content {
+  display: inline-block;
+  border-radius: 0.3rem;
+  height: fit-content;
   background: var(--dough);
   color: var(--dark-forest);
   overflow-y: scroll;
-  padding-inline: var(--space-small) var(--space-xl);
+  padding-block: var(--space-sm) var(--space-sm) var(--space-sm) var(--space-sm);
 }
 
 .header {
   text-align: center;
   text-wrap-mode: nowrap;
-  padding-inline: var(--space-small) var(--space-xl);
 }
 
 .footer {
@@ -98,66 +79,60 @@ body {
   text-wrap-mode: nowrap;
 }
 
-h1 {
-  font-size: var(--font-xl);
+.text-xl {
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-xl);
   text-wrap-mode: nowrap; /* A heading should not wrap, let content flow around the heading */
 }
 
+.text-lg {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-lg);
+}
+
+.text-md {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-md);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-sm);
+}
+
+h1 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-xl);
+}
+
 h2 {
-  font-size: var(--font-large);
-  font-weight: var(--font-weight-large);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-lg);
 }
 
 h3 {
-  font-size: var(--font-medium);
-  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-md);
 }
 
-p,
-span {
-  font-size: var(--font-small);
-  font-weight: var(--font-weight-small);
+h4 {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-sm);
 }
 
-.button {
-  animation: gradientShift 30s ease infinite;
-
-  filter: contrast(1.2);
-  color: var(--dark-forest);
-  mix-blend-mode: multiply;
-  lighting-color: var(--ice);
-
-  border: solid var(--dark-forest) var(--accent-size);
-  border-radius: var(--accent-radius);
-  cursor: pointer;
-  transition:
-    box-shadow var(--transition-speed) ease,
-    background-color var(--transition-speed) ease;
-  box-shadow:
-    4px 4px 8px rgba(0, 0, 0, 0.2),
-    2px 2px 4px rgba(0, 0, 0, 0.1);
-  background-size: 200% 300%;
+p {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-sm);
 }
 
-.button:hover {
-  background-color: rgba(231, 223, 198, 0.8);
-  transition:
-    box-shadow var(--transition-speed) ease,
-    background-color var(--transition-speed) ease;
-  box-shadow:
-    inset 4px 4px 8px rgba(0, 0, 0, 0.2),
-    4px 4px 8px rgba(0, 0, 0, 0.2);
+ul {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-sm);
 }
 
-.button:active {
-  animation: bounce var(--transition-speed);
-  transition:
-    box-shadow var(--transition-speed) ease,
-    background-color var(--transition-speed) ease;
-  box-shadow:
-    inset 2px 2px 4px rgba(0, 0, 0, 0.2),
-    inset 2px 2px 4px rgba(0, 0, 0, 0.15),
-    2px 2px 4px rgba(0, 0, 0, 0.2),
-    -2px -2px 4px rgba(0, 0, 0, 0.15);
+a {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-sm);
+  color: var(--white);
+  text-decoration: underline;
 }

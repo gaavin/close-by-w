@@ -89,60 +89,31 @@ footer {
   text-wrap-mode: nowrap;
 }
 
-.text-xl {
-  font-size: var(--size-xl);
-  font-weight: var(--weight-xl);
-  text-wrap-mode: nowrap; /* A heading should not wrap, let content flow around the heading */
-}
-
-.text-lg {
-  font-size: var(--size-lg);
-  font-weight: var(--weight-lg);
-}
-
-.text-md {
-  font-size: var(--size-md);
-  font-weight: var(--weight-md);
-}
-
-.text-sm {
-  font-size: var(--size-sm);
-  font-weight: var(--weight-sm);
-}
-
 h1 {
   font-size: var(--size-xl);
   font-weight: var(--weight-xl);
+  line-height: 1;
 }
 
 h2 {
   font-size: var(--size-lg);
   font-weight: var(--weight-lg);
+  line-height: 1;
 }
 
 h3 {
   font-size: var(--size-md);
   font-weight: var(--weight-md);
+  line-height: 1;
 }
 
 h4 {
   font-size: var(--size-sm);
   font-weight: var(--weight-sm);
+  line-height: 1;
 }
 
 p {
   font-size: var(--size-sm);
   font-weight: var(--weight-sm);
-}
-
-ul {
-  font-size: var(--size-sm);
-  font-weight: var(--weight-sm);
-}
-
-a {
-  font-size: var(--size-sm);
-  font-weight: var(--weight-sm);
-  color: var(--white);
-  text-decoration: underline;
 }

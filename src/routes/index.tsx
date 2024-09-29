@@ -3,7 +3,7 @@ import { component$ } from "@builder.io/qwik";
 export default component$(() => {
   return (
     <>
-      <h1>Welcome</h1>
+      <h1>Welcome to youkoso japari park </h1>
       <h2>Thank you for visiting my website</h2>
       <p>
         Hi, my website is under construction right now, but if you're interested

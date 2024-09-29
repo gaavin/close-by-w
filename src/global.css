@@ -57,6 +57,7 @@ body {
   transition: var(--transition-speed);
   align-self: center;
   padding-inline: var(--size-md);
+  overflow-x: hidden;
 }
 
 main {

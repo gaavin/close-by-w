@@ -66,10 +66,8 @@ body {
   align-items: center;
   overflow-y: hidden;
   overflow-x: hidden;
-  padding-inline: var(--size-xl);
   text-shadow: 0 0 1px var(--white);
-
-  line-height: var(--line-height-max);
+  line-height: var(--line-height-sm);
 }
 
 main {
@@ -80,8 +78,8 @@ main {
   overflow-y: auto;
   scrollbar-color: var(--dark-forest) var(--dough);
   scrollbar-width: thin;
+  padding-inline: var(--size-md);
   padding-block: var(--size-sm);
-  padding-inline: var(--size-lg);
   border-radius: var(--border-radius);
 }
 

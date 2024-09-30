@@ -29,7 +29,7 @@
   --weight-lg: 600;
   --weight-xl: 700;
 
-  --size-sm: calc(clamp(1rem, -0.875rem + 8.333dvi, 3.5rem) / var(--step));
+  --size-sm: calc(clamp(1rem, -0.875rem + 8.333dvw, 3.5rem) / var(--step));
   --size-md: calc(var(--size-sm) * var(--step));
   --size-lg: calc(var(--size-sm) * var(--step) * var(--step));
   --size-xl: calc(var(--size-sm) * var(--step) * var(--step) * var(--step));
@@ -77,16 +77,15 @@ body {
   align-items: center;
   width: 100dvw;
   height: 100dvh;
-  overflow-x: clip;
   scrollbar-width: thin;
   scrollbar-color: var(--ice) var(--dough);
 }
 
 main {
-  margin-block: auto;
   display: block;
+  max-width: 100%;
   padding-inline: var(--size-lg);
-  padding-block: var(--size-md);
+  padding-block: var(--size-sm);
   background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.3);
   text-shadow: 0 0 var(--size-xl)
     rgba(var(--dough-r), var(--dough-g), var(--dough-b), 1);

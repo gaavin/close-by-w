@@ -71,10 +71,10 @@ body {
 main {
   display: block;
   max-width: 100%;
-  padding-inline: var(--size-lg);
-  padding-block: var(--size-sm);
+  padding-inline: var(--size-xl);
+  padding-block: var(--size-lg);
   margin-block-start: calc(var(--size-xl));
-  margin-block-end: calc(var(--size-sm) * 4);
+  margin-block-end: calc(var(--size-xl));
   background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.6);
   text-shadow: 0 0 var(--size-xl)
     rgba(var(--ice-r), var(--ice-g), var(--ice-b), 0.3);

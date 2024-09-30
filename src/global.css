@@ -24,12 +24,20 @@
 :root {
   --step: 1.6180339887498948482;
 
-  --weight-sm: 400;
-  --weight-md: 500;
-  --weight-lg: 600;
-  --weight-xl: 700;
+  --font-size-sm: clamp(1rem, -0.875rem + 8.333dvh, 3.5rem);
+  --font-size-md: calc(var(--font-size-sm) * var(--step));
+  --font-size-lg: calc(var(--font-size-sm) * var(--step) * var(--step));
+  --font-size-xl: calc(
+    var(--font-size-sm) * var(--step) * var(--step) * var(--step)
+  );
 
-  --size-sm: calc(clamp(1rem, -0.875rem + 8.333dvw, 3.5rem) / var(--step));
+  --weight-sm: 500;
+  --weight-md: 600;
+  --weight-lg: 700;
+  --weight-xl: 800;
+
+  --_base-size: clamp(1rem, -0.875rem + 8.333vmin, 3.5rem);
+  --size-sm: calc(var(--_base-size) / var(--step));
   --size-md: calc(var(--size-sm) * var(--step));
   --size-lg: calc(var(--size-sm) * var(--step) * var(--step));
   --size-xl: calc(var(--size-sm) * var(--step) * var(--step) * var(--step));
@@ -85,7 +93,10 @@ main {
   display: block;
   max-width: 100%;
   padding-inline: var(--size-lg);
+  margin-inline: auto;
   padding-block: var(--size-sm);
+  margin-block-start: calc(var(--size-xl));
+  margin-block-end: calc(var(--size-sm) * 4);
   background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.3);
   text-shadow: 0 0 var(--size-xl)
     rgba(var(--dough-r), var(--dough-g), var(--dough-b), 1);

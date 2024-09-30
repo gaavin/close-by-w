@@ -3,9 +3,8 @@ import { component$ } from "@builder.io/qwik";
 export default component$(() => {
   return (
     <>
-      <h2>welcome✨</h2>
-      <br />
-      <h3>thank you for visiting my website🤍</h3>
+      <h1>welcome✨</h1>
+      <h2>thank you for visiting my website🤍</h2>
       <br />
       <p>
         hi, this place is under construction right now!

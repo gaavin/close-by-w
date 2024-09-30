@@ -29,7 +29,7 @@
   --weight-lg: 600;
   --weight-xl: 700;
 
-  --size-sm: clamp(1.5ex, 1.5ex + 1.75vmin, 3ex);
+  --size-sm: calc(clamp(1rem, -0.875rem + 8.333dvi, 3.5rem) / var(--step));
   --size-md: calc(var(--size-sm) * var(--step));
   --size-lg: calc(var(--size-sm) * var(--step) * var(--step));
   --size-xl: calc(var(--size-sm) * var(--step) * var(--step) * var(--step));
@@ -56,17 +56,12 @@
   --ice-g: 129;
   --ice-b: 164;
 
-  --light-doughy-ice: color-mix(in sRGB, var(--ice), var(--dough) 50%);
-  --light-doughy-ice-r: calc(var(--ice-r) + calc(var(--dough-r) * 50%));
-  --light-doughy-ice-g: calc(var(--ice-g) + calc(var(--dough-g) * 50%));
-  --light-doughy-ice-b: calc(var(--ice-b) + calc(var(--dough-b) * 50%));
-
   --background: linear-gradient(165deg, var(--ice), 25%, var(--dark-forest));
   --border-radius: calc(var(--size-sm) / 2);
   --line-height-sm: 1.5;
   --line-height-md: 1.1;
   --line-height-lg: 1.05;
-  --line-height-xl: 1.05;
+  --line-height-xl: 1;
 }
 
 html,
@@ -117,12 +112,6 @@ h2 {
 h3 {
   font-size: var(--size-md);
   font-weight: var(--weight-md);
-  line-height: var(--line-height-md);
-}
-
-h4 {
-  font-size: var(--size-sm);
-  font-weight: var(--weight-sm);
   line-height: var(--line-height-md);
 }
 

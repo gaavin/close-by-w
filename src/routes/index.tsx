@@ -4,7 +4,7 @@ export default component$(() => {
   return (
     <>
       <h1>Welcome✨</h1>
-
+      <br />
       <h2>Thank you for coming to my website 🤍</h2>
       <br />
       <p>

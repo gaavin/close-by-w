@@ -1,30 +1,9 @@
 @import "reset.css";
 
-@keyframes bounce {
-  0% {
-    transform: scale(1);
-  }
-  20% {
-    transform: scale(0.95);
-  }
-  40% {
-    transform: scale(1.015);
-  }
-  60% {
-    transform: scale(0.98);
-  }
-  80% {
-    transform: scale(1.01);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 :root {
   --step: 1.6180339887498948482;
 
-  --font-size-sm: clamp(1rem, -0.875rem + 8.333dvh, 3.5rem);
+  --font-size-sm: clamp(1rem, -0.875rem + 8.333dvi, 3.5rem);
   --font-size-md: calc(var(--font-size-sm) * var(--step));
   --font-size-lg: calc(var(--font-size-sm) * var(--step) * var(--step));
   --font-size-xl: calc(

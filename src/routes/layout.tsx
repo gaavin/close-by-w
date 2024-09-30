@@ -1,9 +1,5 @@
 import { component$, Slot } from "@builder.io/qwik";
-import {
-  useLocation,
-  type DocumentHead,
-  type RequestHandler,
-} from "@builder.io/qwik-city";
+import { type DocumentHead, type RequestHandler } from "@builder.io/qwik-city";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -27,19 +23,11 @@ export const head: DocumentHead = {
 };
 
 export default component$(() => {
-  const loc = useLocation();
-  const path = loc.url.pathname.split("/")[1];
   return (
     <>
-      <header>
-        <h4>gavinpower.dev/{path}</h4>
-      </header>
       <main>
         <Slot />
       </main>
-      <footer>
-        <span>©2024 Mr Beast and Chris Chandler</span>
-      </footer>
     </>
   );
 });

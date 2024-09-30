@@ -75,9 +75,9 @@ main {
   padding-block: var(--size-sm);
   margin-block-start: calc(var(--size-xl));
   margin-block-end: calc(var(--size-sm) * 4);
-  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.3);
+  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.6);
   text-shadow: 0 0 var(--size-xl)
-    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 1);
+    rgba(var(--ice-r), var(--ice-g), var(--ice-b), 0.3);
   color: rgba(
     var(--dark-forest-r),
     var(--dark-forest-g),
@@ -85,8 +85,8 @@ main {
     0.75
   );
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 calc(var(--size-xl) * 2)
-    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.9);
+  box-shadow: inset outset 0 0 var(--size-sm)
+    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 1);
 }
 
 h1 {

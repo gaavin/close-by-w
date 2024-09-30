@@ -54,6 +54,7 @@
 html,
 body {
   width: 100vi;
+  max-width: 100dvw;
   height: 100dvh;
   display: inline-flex;
   flex-direction: column;

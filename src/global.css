@@ -92,8 +92,8 @@ body {
 main {
   display: block;
   width: min-content;
-  backdrop-filter: blur(calc(var(--size-sm) * 1 / 3));
-  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.66);
+  backdrop-filter: blur(calc(var(--size-sm) * 1 / 3)) brightness(100%);
+  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.5);
   color: transparent;
   overflow-y: auto;
   scrollbar-color: var(--dark-forest) var(--dough);
@@ -103,7 +103,8 @@ main {
   border-radius: var(--border-radius);
   text-shadow: 0 0 calc(1px * 1 / 3)
     rgba(var(--dark-forest-r), var(--dark-forest-g), var(--dark-forest-b), 0.9);
-  box-shadow: inset 0 0 calc(var(--size-xl) * 2) 2px var(--light-doughy-ice);
+  box-shadow: inset 0 0 var(--size-xl)
+    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.7);
 }
 
 header {

@@ -88,6 +88,7 @@ body {
 }
 
 main {
+  margin-inline: var(--size-sm);
   padding-inline: var(--size-md);
   padding-block: var(--size-sm);
   height: min(min-content, 100dvh);

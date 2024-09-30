@@ -93,7 +93,6 @@ main {
   display: block;
   max-width: 100%;
   padding-inline: var(--size-lg);
-  margin-inline: auto;
   padding-block: var(--size-sm);
   margin-block-start: calc(var(--size-xl));
   margin-block-end: calc(var(--size-sm) * 4);

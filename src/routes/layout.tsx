@@ -25,9 +25,11 @@ export const head: DocumentHead = {
 export default component$(() => {
   return (
     <>
+      <header></header>
       <main>
         <Slot />
       </main>
+      <footer></footer>
     </>
   );
 });

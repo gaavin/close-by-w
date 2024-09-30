@@ -37,14 +37,32 @@
   --font-family: system-ui, sans-serif;
 
   --white: #ffffff;
+  --white-r: 255;
+  --white-g: 255;
+  --white-b: 255;
+
   --dark-forest: #092327;
+  --dark-forest-r: 9;
+  --dark-forest-g: 35;
+  --dark-forest-b: 39;
+
   --dough: #e7dfc6;
+  --dough-r: 231;
+  --dough-g: 223;
+  --dough-b: 198;
+
   --ice: #4281a4;
+  --ice-r: 66;
+  --ice-g: 129;
+  --ice-b: 164;
+
   --light-doughy-ice: color-mix(in sRGB, var(--ice), var(--dough) 50%);
+  --light-doughy-ice-r: calc(var(--ice-r) + calc(var(--dough-r) * 50%));
+  --light-doughy-ice-g: calc(var(--ice-g) + calc(var(--dough-g) * 50%));
+  --light-doughy-ice-b: calc(var(--ice-b) + calc(var(--dough-b) * 50%));
+
   --background: linear-gradient(135deg, var(--ice), 10%, var(--dark-forest));
-
   --border-radius: calc(var(--size-sm) / 2);
-
   --line-height-sm: 1.5;
   --line-height-md: 1.1;
   --line-height-lg: 1.05;
@@ -62,26 +80,30 @@ body {
   color: var(--white);
   font-family: var(--font-family);
   font-weight: var(--weight-sm);
-  transition: 33ms cubic-bezier(0.1, 0.9, 0.2, 0.9);
+  transition: 333ms cubic-bezier(0.1, 0.9, 0.2, 0.9);
   justify-content: center;
   align-items: center;
   overflow-y: hidden;
   overflow-x: hidden;
-  text-shadow: 0 0 1px var(--white);
   line-height: var(--line-height-sm);
+  text-shadow: 0 0 calc(1px * 1 / 3) var(--white);
 }
 
 main {
   display: block;
   width: min-content;
-  background: var(--dough);
-  color: var(--dark-forest);
+  backdrop-filter: blur(calc(var(--size-sm) * 1 / 3));
+  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.66);
+  color: transparent;
   overflow-y: auto;
   scrollbar-color: var(--dark-forest) var(--dough);
   scrollbar-width: thin;
   padding-inline: var(--size-md);
   padding-block: var(--size-sm);
   border-radius: var(--border-radius);
+  text-shadow: 0 0 calc(1px * 1 / 3)
+    rgba(var(--dark-forest-r), var(--dark-forest-g), var(--dark-forest-b), 0.9);
+  box-shadow: inset 0 0 calc(var(--size-xl) * 2) 2px var(--light-doughy-ice);
 }
 
 header {

@@ -1,5 +1,9 @@
 import { component$, Slot } from "@builder.io/qwik";
-import type { DocumentHead, RequestHandler } from "@builder.io/qwik-city";
+import {
+  useLocation,
+  type DocumentHead,
+  type RequestHandler,
+} from "@builder.io/qwik-city";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -23,10 +27,12 @@ export const head: DocumentHead = {
 };
 
 export default component$(() => {
+  const loc = useLocation();
+  const path = loc.url.pathname.split("/")[1];
   return (
     <>
       <header>
-        <h4>gavinpower.dev</h4>
+        <h4>gavinpower.dev/{path}</h4>
       </header>
       <main>
         <Slot />

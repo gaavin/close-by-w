@@ -3,7 +3,7 @@
 :root {
   --step: 1.6180339887498948482;
 
-  --font-size-sm: clamp(1rem, -0.875rem + 8.333dvi, 3.5rem);
+  --font-size-sm: clamp(1rem, -0.875rem + 8.333dvw, 3.5rem);
   --font-size-md: calc(var(--font-size-sm) * var(--step));
   --font-size-lg: calc(var(--font-size-sm) * var(--step) * var(--step));
   --font-size-xl: calc(
@@ -65,14 +65,13 @@ body {
   scrollbar-color: var(--dark-forest) var(--dough);
   scrollbar-width: thin;
   overflow-y: auto;
+  align-content: center;
 }
 
 main {
-  margin-inline: auto;
   display: block;
+  margin-inline: auto;
   max-width: min-content;
-  margin-top: var(--size-xl);
-  margin-bottom: var(--size-sm);
   padding-inline-start: var(--size-lg);
   padding-inline-end: var(--size-lg);
   padding-block-start: var(--size-md);

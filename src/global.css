@@ -44,7 +44,7 @@
   --ice-b: 164;
 
   --background: linear-gradient(165deg, var(--ice), 25%, var(--dark-forest));
-  --border-radius: calc(var(--size-sm) / 2);
+  --border-radius: calc(var(--size-sm));
   --line-height-sm: 1.5;
   --line-height-md: 1.1;
   --line-height-lg: 1.05;
@@ -62,21 +62,15 @@ body {
   text-shadow: 0 0 calc(1px * 1 / 3) var(--white);
   width: 100dvw;
   height: 100dvh;
-  scrollbar-color: var(--ice) transparent;
+  scrollbar-color: var(--dough) var(--background);
   overflow-x: clip;
   scrollbar-width: thin;
+  padding-block-start: calc(var(--size-sm) / 2);
 }
 
 main {
-  margin-top: var(--size-lg);
-  margin-bottom: var(--size-lg);
-
-  margin-left: auto;
-  margin-right: auto;
   margin-inline: auto;
-
   display: block;
-  align-self: center;
   max-width: min-content;
   padding-inline: var(--size-xl);
   padding-block: var(--size-lg);

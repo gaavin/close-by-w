@@ -83,7 +83,7 @@ main {
   padding-block-start: var(--size-md);
   padding-block-end: var(--size-md);
 
-  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.05);
+  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.25);
   backdrop-filter: blur(calc(var(--size-xl)) * 2);
   color: rgba(
     var(--dark-forest-r),

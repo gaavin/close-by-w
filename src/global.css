@@ -72,7 +72,7 @@ main {
   display: block;
   max-width: min-content;
   margin-top: var(--size-xl);
-  margin-bottom: var(--size-lg);
+  margin-bottom: var(--size-sm);
   padding-inline-start: var(--size-lg);
   padding-inline-end: var(--size-md);
   padding-block-start: var(--size-md);

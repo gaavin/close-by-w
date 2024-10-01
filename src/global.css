@@ -46,9 +46,9 @@
   --background: linear-gradient(165deg, var(--ice), 25%, var(--dark-forest));
   --border-radius: calc(var(--size-sm));
   --line-height-sm: 1.5;
-  --line-height-md: 1.1;
-  --line-height-lg: 1.05;
-  --line-height-xl: 1;
+  --line-height-md: 1.2;
+  --line-height-lg: 1.15;
+  --line-height-xl: 1.1;
 }
 
 html,
@@ -62,18 +62,20 @@ body {
   text-shadow: 0 0 calc(1px * 1 / 3) var(--white);
   width: 100dvw;
   height: 100dvh;
-  scrollbar-color: var(--dough) var(--background);
-  overflow-x: clip;
+  scrollbar-color: var(--dark-forest) var(--dough);
   scrollbar-width: thin;
-  padding-block-start: calc(var(--size-sm) / 2);
+  overflow-y: auto;
 }
 
 main {
   margin-inline: auto;
   display: block;
   max-width: min-content;
-  padding-inline: var(--size-xl);
-  padding-block: var(--size-lg);
+  margin-top: var(--size-xl);
+  padding-inline-start: var(--size-lg);
+  padding-inline-end: var(--size-md);
+  padding-block-start: var(--size-md);
+  padding-block-end: var(--size-md);
 
   background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.6);
   text-shadow: 0 0 var(--size-xl)

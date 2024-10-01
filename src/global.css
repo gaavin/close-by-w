@@ -66,10 +66,13 @@ body {
   scrollbar-width: thin;
   overflow-y: auto;
   align-content: center;
+  padding-inline-start: var(--size-sm) - 1rem;
+  padding-inline-end: var(--size-sm) - 1rem;
 }
 
 main {
   display: block;
+
   margin-inline: auto;
   max-width: min-content;
   padding-inline-start: var(--size-lg);

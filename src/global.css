@@ -71,11 +71,11 @@ main {
   margin-inline: auto;
   display: block;
   max-width: min-content;
-  margin-top: var(--size-lg);
+  margin-top: var(--size-xl);
   margin-bottom: var(--size-lg);
-  padding-inline-start: var(--size-xl);
-  padding-inline-end: var(--size-sm);
-  padding-block-start: var(--size-sm);
+  padding-inline-start: var(--size-lg);
+  padding-inline-end: var(--size-md);
+  padding-block-start: var(--size-md);
   padding-block-end: var(--size-sm);
 
   background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.6);

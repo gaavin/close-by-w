@@ -84,6 +84,8 @@ main {
   padding-inline-end: var(--size-lg);
   padding-block-start: var(--size-md);
   padding-block-end: var(--size-md);
+  outline: calc(var(--size-sm) / 4) outset
+    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.33);
 
   background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.33);
   backdrop-filter: blur(calc(var(--size-xl)));
@@ -98,7 +100,7 @@ main {
     rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.9);
   border-radius: calc(var(--size-lg) / 4);
 
-  box-shadow: inset calc(var(--size-sm) / 8) calc(var(--size-sm) / 8)
+  box-shadow: outset calc(var(--size-sm) / 8) calc(var(--size-sm) / 8)
     calc(var(--size-lg) * 8) var(--size-xl)
     rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.05);
 }

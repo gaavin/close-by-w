@@ -74,9 +74,9 @@ main {
   margin-top: var(--size-xl);
   margin-bottom: var(--size-sm);
   padding-inline-start: var(--size-lg);
-  padding-inline-end: var(--size-md);
+  padding-inline-end: var(--size-lg);
   padding-block-start: var(--size-md);
-  padding-block-end: var(--size-sm);
+  padding-block-end: var(--size-md);
 
   background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.6);
   text-shadow: 0 0 var(--size-xl)

@@ -28,6 +28,9 @@ export default component$(() => {
       <main>
         <Slot />
       </main>
+      <footer>
+        <Slot name="footer" />
+      </footer>
     </>
   );
 });

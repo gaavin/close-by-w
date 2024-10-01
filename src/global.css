@@ -38,12 +38,14 @@
   --dough-g: 223;
   --dough-b: 198;
 
-  --ice: #4281a4;
-  --ice-r: 66;
-  --ice-g: 129;
-  --ice-b: 164;
+  --moms-favourite-color: hsl(188, 63%, 25%);
 
-  --background: linear-gradient(165deg, var(--ice), 25%, var(--dark-forest));
+  --background: linear-gradient(
+    137.5deg,
+    var(--moms-favourite-color),
+    calc(var(--size-lg) * 4),
+    var(--dark-forest)
+  );
   --border-radius: var(--size-sm);
   --line-height-sm: 1.5;
   --line-height-md: 1.2;
@@ -70,7 +72,7 @@ body {
   padding-inline-start: var(--size-sm) - 1rem;
   padding-inline-end: var(--size-sm) - 1rem;
 
-  transition: all 333ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 main {
@@ -83,22 +85,22 @@ main {
   padding-block-start: var(--size-md);
   padding-block-end: var(--size-md);
 
-  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.25);
-  backdrop-filter: blur(calc(var(--size-xl)) * 2);
+  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.33);
+  backdrop-filter: blur(calc(var(--size-xl)));
   color: rgba(
     var(--dark-forest-r),
     var(--dark-forest-g),
     var(--dark-forest-b),
-    0.9
+    0.8
   );
 
   text-shadow: 0 0 calc(var(--size-xl))
-    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 1);
+    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.9);
   border-radius: calc(var(--size-lg) / 4);
 
-  box-shadow: inset calc(var(--size-md) / 4) calc(var(--size-md) / 4)
-    calc(var(--size-xl) / 1) var(--size-sm)
-    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.6);
+  box-shadow: inset calc(var(--size-sm) / 8) calc(var(--size-sm) / 8)
+    calc(var(--size-lg) * 8) var(--size-xl)
+    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.05);
 }
 
 h1 {

@@ -64,14 +64,14 @@ body {
   height: 100dvh;
   scrollbar-color: var(--ice) var(--dough);
   overflow-x: clip;
-  margin-top: var(--size-sm);
-  margin-bottom: var(--size-sm);
 }
 
 main {
-  max-height: 100vh;
+  max-height: 100vi;
   margin-left: auto;
   margin-right: auto;
+  margin-top: var(--size-sm);
+  margin-bottom: var(--size-sm);
   display: block;
   align-self: center;
   max-width: min-content;

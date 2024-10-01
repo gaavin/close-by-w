@@ -44,7 +44,7 @@
   --ice-b: 164;
 
   --background: linear-gradient(165deg, var(--ice), 25%, var(--dark-forest));
-  --border-radius: calc(var(--size-sm));
+  --border-radius: var(--size-sm);
   --line-height-sm: 1.5;
   --line-height-md: 1.2;
   --line-height-lg: 1.15;
@@ -53,6 +53,7 @@
 
 html,
 body {
+  border-radius: calc(var(--size-sm) / var(--step));
   display: flow-root;
   background: var(--background) fixed;
   color: var(--white);
@@ -82,18 +83,22 @@ main {
   padding-block-start: var(--size-md);
   padding-block-end: var(--size-md);
 
-  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.6);
-  text-shadow: 0 0 var(--size-xl)
-    rgba(var(--ice-r), var(--ice-g), var(--ice-b), 0.3);
+  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.1);
+  backdrop-filter: blur(var(--size-xl));
   color: rgba(
     var(--dark-forest-r),
     var(--dark-forest-g),
     var(--dark-forest-b),
-    0.75
+    0.9
   );
-  border-radius: var(--border-radius);
-  box-shadow: inset outset 0 0 var(--size-sm)
+
+  text-shadow: 0 0 calc(var(--size-lg))
     rgba(var(--dough-r), var(--dough-g), var(--dough-b), 1);
+  border-radius: calc(var(--size-lg) / 4);
+
+  box-shadow: inset calc(var(--size-md) / 4) calc(var(--size-md) / 4)
+    calc(var(--size-xl) / 1) var(--size-sm)
+    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.6);
 }
 
 h1 {

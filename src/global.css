@@ -83,8 +83,8 @@ main {
   padding-block-start: var(--size-md);
   padding-block-end: var(--size-md);
 
-  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.1);
-  backdrop-filter: blur(var(--size-xl));
+  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.05);
+  backdrop-filter: blur(calc(var(--size-xl)) * 2);
   color: rgba(
     var(--dark-forest-r),
     var(--dark-forest-g),
@@ -92,7 +92,7 @@ main {
     0.9
   );
 
-  text-shadow: 0 0 calc(var(--size-lg))
+  text-shadow: 0 0 calc(var(--size-xl))
     rgba(var(--dough-r), var(--dough-g), var(--dough-b), 1);
   border-radius: calc(var(--size-lg) / 4);
 

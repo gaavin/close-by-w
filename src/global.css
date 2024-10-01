@@ -3,7 +3,7 @@
 :root {
   --step: 1.6180339887498948482;
 
-  --font-size-sm: clamp(1rem, -0.875rem + 8.333dvw, 3.5rem);
+  --font-size-sm: clamp(1rem, -0.875rem + 8.333dvi, 3.5rem);
   --font-size-md: calc(var(--font-size-sm) * var(--step));
   --font-size-lg: calc(var(--font-size-sm) * var(--step) * var(--step));
   --font-size-xl: calc(

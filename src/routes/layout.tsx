@@ -1,5 +1,6 @@
 import { component$, Slot } from "@builder.io/qwik";
 import { type DocumentHead, type RequestHandler } from "@builder.io/qwik-city";
+import { SiGithub } from "@qwikest/icons/simpleicons";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -29,14 +30,24 @@ export default component$(() => {
         <Slot />
       </main>
       <footer>
-        <menu>
+        <ul>
           <li>
             <a href="/">home</a>
           </li>
           <li>
-            <a href="/posts/big-chungus">posts</a>
+            <a href="/posts">posts</a>
           </li>
-        </menu>
+          <li>
+            <span style={{ display: "inline-block", "text-wrap": "nowrap" }}>
+              <a href="https://github.com/gaavin">github</a>
+              <SiGithub
+                style={{
+                  color: "var(--white)",
+                }}
+              />
+            </span>
+          </li>
+        </ul>
       </footer>
     </>
   );

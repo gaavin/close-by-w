@@ -15,9 +15,8 @@ export const Post = component$(() => {
 });
 
 export default component$(() => {
-  const { params } = useLocation();
-  const title = useSignal("post title");
-  const description = useSignal("post description");
+  const title = useSignal("big chungus");
+  const description = useSignal("big big chungus big chungus big chungus");
 
   return (
     <>
@@ -29,8 +28,6 @@ export default component$(() => {
         <span q:slot="title">{title}</span>
         {description}
       </Post>
-      <label>Share this post!</label>
-      <a href={`/posts/${params.postId}`}>/posts/{params.postId}</a>
     </>
   );
 });

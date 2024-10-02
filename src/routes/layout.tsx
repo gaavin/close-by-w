@@ -29,6 +29,16 @@ export default component$(() => {
       <main>
         <Slot />
       </main>
+      <footer>
+        <menu>
+          <li>
+            <a href="/">home</a>
+          </li>
+          <li>
+            <a href="/posts/big-chungus">posts</a>
+          </li>
+        </menu>
+      </footer>
     </>
   );
 });

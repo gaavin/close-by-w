@@ -1,5 +1,4 @@
 import { component$, Slot, useSignal } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
 
 export const Post = component$(() => {
   const isOpen = useSignal(false);

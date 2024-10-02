@@ -1,6 +1,5 @@
 import { component$, Slot } from "@builder.io/qwik";
 import { type DocumentHead, type RequestHandler } from "@builder.io/qwik-city";
-import { SiGithub } from "@qwikest/icons/simpleicons";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:

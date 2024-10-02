@@ -78,6 +78,7 @@ main {
   width: 100%;
   display: inline-block;
   margin-inline: auto;
+  margin: auto;
   max-width: min-content;
   padding-inline-start: var(--size-lg);
   padding-inline-end: var(--size-lg);

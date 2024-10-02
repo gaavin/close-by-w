@@ -102,7 +102,7 @@ main {
   );
 
   text-shadow: 0 0 calc(var(--size-xl))
-    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 1);
+    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.5);
   border-radius: calc(var(--size-lg) / 4);
 
   box-shadow: inset calc(var(--size-sm) / 8) calc(var(--size-sm) / 8)

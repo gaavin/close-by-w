@@ -113,6 +113,7 @@ h2,
 h3,
 ul {
   text-align: start;
+  font-size: var(--size-sm);
 }
 
 h1 {

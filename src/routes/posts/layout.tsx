@@ -6,36 +6,28 @@ import * as schema from "~/schema";
 export const useUsers = routeLoader$(async (requestEvent) => {
   const { D1 } = requestEvent.platform.env;
   const db = drizzle(D1, { schema });
-  const users = await db
-    .select({
-      id: schema.usersTable.id,
-      username: schema.usersTable.username,
-      createdAt: schema.usersTable.createdAt,
-      updatedAt: schema.usersTable.updatedAt,
-    })
-    .from(schema.usersTable);
-
-  return users;
+  const posts = db.query.posts.findMany();
+  return posts;
 });
 
 export default component$(() => {
-  const users = useUsers();
+  const posts = useUsers();
   return (
     <>
       <div>
-        <label>Users</label>
+        <label>Posts</label>
         <ul>
-          {users.value.map((user) => (
+          {posts.value.map((post) => (
             <li>
               <ul>
                 <label>Id</label>
-                <li>{user.id}</li>
-                <label>Username</label>
-                <li>{user.username}</li>
-                <label>Joined</label>
-                <li>{user.createdAt.toUTCString()}</li>
-                <label>Updated At</label>
-                <li>{user.updatedAt.toUTCString()}</li>
+                <li>{post.id}</li>
+                <label>Author</label>
+                <li>{post.userId}</li>
+                <label>Date</label>
+                <li>{post.createdAt.toUTCString()}</li>
+                <label>Last Edited: </label>
+                <li>{post.updatedAt.toUTCString()}</li>
               </ul>
             </li>
           ))}

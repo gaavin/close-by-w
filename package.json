@@ -16,7 +16,7 @@
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
-    "build.types": "tsc --incremental --noEmit",
+    "build.types": "wrangler types --experimental-include-runtime && tsc --incremental --noEmit",
     "deploy": "wrangler pages deploy ./dist",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
@@ -33,9 +33,10 @@
     "@builder.io/qwik-city": "^1.9.0",
     "@qwikest/icons": "^0.0.13",
     "@types/eslint": "^9.6.1",
-    "@types/node": "^22.7.4",
     "@typescript-eslint/eslint-plugin": "^8.8.0",
     "@typescript-eslint/parser": "^8.8.0",
+    "drizzle-kit": "^0.24.2",
+    "drizzle-orm": "^0.33.0",
     "eslint": "^9.11.1",
     "eslint-plugin-qwik": "^1.9.0",
     "prettier": "^3.3.3",
@@ -44,5 +45,11 @@
     "vite": "^5.4.8",
     "vite-tsconfig-paths": "^5.0.1",
     "wrangler": "^3.79.0"
+  },
+  "overrides": {
+    "@types/node": "20.8.3"
+  },
+  "resolutions": {
+    "eslint": "9.11.1"
   }
 }

@@ -18,8 +18,8 @@
     "noEmit": true,
     "paths": {
       "~/*": ["./src/*"]
-    }
+    },
+    "types": ["./.wrangler/types/runtime.d.ts"]
   },
-  "files": ["./.eslintrc.cjs"],
-  "include": ["src", "./*.d.ts", "./*.config.ts"]
+  "include": ["src", "./*.d.ts", "./*.config.ts", "eslint.config.mjs"]
 }

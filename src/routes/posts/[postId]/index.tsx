@@ -20,10 +20,17 @@ export default component$(() => {
 
   return (
     <>
-      <label>Title</label>
-      <input bind:value={title} type="text" />
-      <label>Description</label>
-      <input bind:value={description} type="text" />
+      <div
+        style={{
+          display: "flex",
+          "flex-direction": "column",
+        }}
+      >
+        <label>Title</label>
+        <input bind:value={title} type="text" />
+        <label>Description</label>
+        <input bind:value={description} type="text" />
+      </div>
       <Post>
         <span q:slot="title">{title}</span>
         {description}

@@ -84,9 +84,8 @@ main {
   text-justify: left;
   margin-inline: var(--size-lg);
   margin-block: var(--size-sm);
-  min-width: min-content;
-  max-width: min-content;
-  display: inline-block;
+  width: fit-content;
+  display: block;
   padding-inline-start: var(--size-lg);
   padding-inline-end: var(--size-lg);
   padding-block-start: var(--size-lg);

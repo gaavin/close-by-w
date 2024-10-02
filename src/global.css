@@ -145,10 +145,10 @@ menu {
 
 header {
   display: inline-block;
-  padding-inline: var(--size-lg);
+  padding-inline: var(--size-xl);
 }
 
 footer {
   display: inline-block;
-  padding-inline: var(--size-lg);
+  padding-inline: var(--size-xl);
 }

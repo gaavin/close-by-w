@@ -17,8 +17,7 @@ const compat = new FlatCompat({
 export default [
   ...compat.extends(
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:qwik/recommended"
+    "plugin:@typescript-eslint/recommended"
   ),
   {
     plugins: {
@@ -43,7 +42,6 @@ export default [
         },
       },
     },
-
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",

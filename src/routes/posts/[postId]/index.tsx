@@ -11,5 +11,5 @@ export const usePost = routeLoader$(async (requestEvent) => {
 
 export default component$(() => {
   const post = usePost();
-  return <>{post.value?.content}</>;
+  return <p>{post.value?.content}</p>;
 });

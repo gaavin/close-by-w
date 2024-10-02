@@ -28,7 +28,6 @@ export default component$(() => {
   const posts = usePostList();
   return (
     <>
-      <h1>Posts</h1>
       {posts.value.map((post) => (
         <a href={post.id.toString()}>
           <div key={post.id}>
@@ -41,13 +40,6 @@ export default component$(() => {
           </div>
         </a>
       ))}
-
-      <label>Recent Posts</label>
-      <ul>
-        <li>
-          <a href="/posts/big-chungus">Big Chungus</a>
-        </li>
-      </ul>
       <br />
       <Slot />
     </>

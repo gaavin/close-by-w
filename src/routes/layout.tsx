@@ -1,6 +1,5 @@
 import { component$, Slot } from "@builder.io/qwik";
 import { type DocumentHead, type RequestHandler } from "@builder.io/qwik-city";
-import { SiGithub } from "@qwikest/icons/simpleicons";
 import Chat from "~/components/chat";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {

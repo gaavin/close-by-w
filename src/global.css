@@ -38,7 +38,14 @@
   --dough-g: 223;
   --dough-b: 198;
 
-  --moms-favourite-color: hsl(188, 63%, 25%);
+  --moms-favourite-color-r: 24;
+  --moms-favourite-color-g: 93;
+  --moms-favourite-color-b: 104;
+  --moms-favourite-color: rgb(
+    var(--moms-favourite-color-r),
+    var(--moms-favourite-color-g),
+    var(--moms-favourite-color-g)
+  );
 
   --background: linear-gradient(
     137.5deg,
@@ -55,9 +62,8 @@
 
 html,
 body {
-  text-align: center;
   align-content: center;
-
+  text-align: center;
   display: block;
   border-radius: calc(var(--size-sm) / var(--step));
   background: var(--background) fixed;
@@ -74,6 +80,7 @@ body {
 }
 
 main {
+  text-justify: left;
   margin: var(--size-sm);
   min-width: min-content;
   max-width: fit-content;
@@ -82,25 +89,25 @@ main {
   padding-inline-end: var(--size-lg);
   padding-block-start: var(--size-lg);
   padding-block-end: var(--size-lg);
-  border: calc(var(--size-sm) / 4) outset
-    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.1);
+  border: calc(var(--size-sm)) outset
+    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.2);
 
-  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.33);
-  backdrop-filter: blur(calc(var(--size-xl)));
+  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.35);
+  backdrop-filter: blur(var(--size-xl));
   color: rgba(
     var(--dark-forest-r),
     var(--dark-forest-g),
     var(--dark-forest-b),
-    0.8
+    1
   );
 
   text-shadow: 0 0 calc(var(--size-xl))
-    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.9);
+    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 1);
   border-radius: calc(var(--size-lg) / 4);
 
-  box-shadow: outset calc(var(--size-sm) / 8) calc(var(--size-sm) / 8)
+  box-shadow: inset calc(var(--size-sm) / 8) calc(var(--size-sm) / 8)
     calc(var(--size-lg) * 8) var(--size-xl)
-    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.05);
+    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.25);
 }
 
 p,

@@ -72,8 +72,6 @@ body {
   scrollbar-color: var(--dough) var(--dark-forest);
   overflow-y: auto;
   overflow-x: clip;
-
-  transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 main {

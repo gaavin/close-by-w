@@ -38,16 +38,6 @@ export default component$(() => {
           <li>
             <a href="/posts">posts</a>
           </li>
-          <li>
-            <span style={{ display: "block", "text-wrap": "nowrap" }}>
-              <a href="https://github.com/gaavin">github</a>
-              <SiGithub
-                style={{
-                  color: "var(--white)",
-                }}
-              />
-            </span>
-          </li>
         </ul>
       </header>
       <main>

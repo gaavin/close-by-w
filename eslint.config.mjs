@@ -36,7 +36,6 @@ export default [
       sourceType: "module",
 
       parserOptions: {
-        tsconfigRootDir: "C:\\Users\\Gavin\\TheProjects\\close-by-w",
         project: ["./tsconfig.json"],
 
         ecmaFeatures: {

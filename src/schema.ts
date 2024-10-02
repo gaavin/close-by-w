@@ -18,7 +18,7 @@ export const users = sqliteTable("users", {
 
 export const posts = sqliteTable("posts", {
   ...baseTable,
-  userId: integer("user_id")
+  authorId: integer("author_id")
     .notNull()
     .references(() => users.id),
   title: text("title").notNull(),
@@ -26,9 +26,13 @@ export const posts = sqliteTable("posts", {
   content: text("content").notNull(),
 });
 
+export const usersRelations = relations(users, ({ many }) => ({
+  posts: many(posts),
+}));
+
 export const postsRelations = relations(posts, ({ one }) => ({
-  userId: one(users, {
-    fields: [posts.userId],
+  author: one(users, {
+    fields: [posts.authorId],
     references: [users.id],
   }),
 }));

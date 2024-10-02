@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "4763db8b-268c-4d31-b370-9ace61164ee2",
+  "id": "e477d5a7-4822-49cf-8544-e5e07148258f",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "posts": {
@@ -30,8 +30,8 @@
           "autoincrement": false,
           "default": "(unixepoch() * 1000)"
         },
-        "user_id": {
-          "name": "user_id",
+        "author_id": {
+          "name": "author_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": true,
@@ -61,12 +61,12 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "posts_user_id_users_id_fk": {
-          "name": "posts_user_id_users_id_fk",
+        "posts_author_id_users_id_fk": {
+          "name": "posts_author_id_users_id_fk",
           "tableFrom": "posts",
           "tableTo": "users",
           "columnsFrom": [
-            "user_id"
+            "author_id"
           ],
           "columnsTo": [
             "id"

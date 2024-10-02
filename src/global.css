@@ -107,14 +107,13 @@ p,
 span,
 a,
 svg,
+ul,
 h1,
 h2,
-h3,
-ul {
+h3 {
   text-align: start;
   font-size: var(--size-sm);
 }
-
 h1 {
   font-size: var(--size-xl);
   font-weight: var(--weight-xl);
@@ -138,11 +137,11 @@ menu {
 }
 
 header {
-  padding: var(--size-lg);
   display: inline-block;
+  padding-inline: var(--size-lg);
 }
 
 footer {
-  padding: var(--size-lg);
   display: inline-block;
+  padding-inline: var(--size-lg);
 }

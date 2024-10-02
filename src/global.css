@@ -15,7 +15,7 @@
   --weight-lg: 700;
   --weight-xl: 800;
 
-  --_base-size: clamp(1rem, -0.875rem + 8.333vmin, 3.5rem);
+  --_base-size: clamp(1rem, -0.875rem + 6.333vmin, 2.5rem);
   --size-sm: calc(var(--_base-size) / var(--step));
   --size-md: calc(var(--size-sm) * var(--step));
   --size-lg: calc(var(--size-sm) * var(--step) * var(--step));
@@ -71,19 +71,17 @@ body {
   height: 100dvh;
   scrollbar-color: var(--dough) var(--dark-forest);
   overflow-y: auto;
-  overflow-x: clip;
 }
 
 main {
-  width: 100%;
+  margin: var(--size-sm);
+  min-width: min-content;
+  max-width: fit-content;
   display: inline-block;
-  margin-inline: auto;
-  margin: auto;
-  max-width: min-content;
   padding-inline-start: var(--size-lg);
   padding-inline-end: var(--size-lg);
-  padding-block-start: var(--size-md);
-  padding-block-end: var(--size-md);
+  padding-block-start: var(--size-lg);
+  padding-block-end: var(--size-lg);
   border: calc(var(--size-sm) / 4) outset
     rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.1);
 
@@ -140,9 +138,11 @@ menu {
 }
 
 header {
+  padding: var(--size-lg);
   display: inline-block;
 }
 
 footer {
+  padding: var(--size-lg);
   display: inline-block;
 }

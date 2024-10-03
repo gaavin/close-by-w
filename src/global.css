@@ -98,12 +98,12 @@ main {
     var(--dark-forest-r),
     var(--dark-forest-g),
     var(--dark-forest-b),
-    0.95
+    0.92
   );
 
   text-shadow: calc(var(--size-sm) / 6) calc(var(--size-sm) / 6)
     calc(1em / var(--step) / var(--step))
-    rgba(var(--dark-forest-r), var(--dark-forest-g), var(--dark-forest-b), 0.2);
+    rgba(var(--dark-forest-r), var(--dark-forest-g), var(--dark-forest-b), 0.15);
   border-radius: calc(var(--size-sm) / 2);
 
   box-shadow: inset calc(var(--size-lg) / 4) calc(var(--size-xl) / 4)

@@ -91,7 +91,7 @@ main {
   padding-block-start: var(--size-md);
   padding-block-end: var(--size-md);
   border: outset calc(var(--size-sm) / var(--step))
-    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.2);
+    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 1);
 
   background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.8);
   color: rgba(
@@ -103,7 +103,7 @@ main {
 
   text-shadow: calc(var(--size-sm) / 6) calc(var(--size-sm) / 6)
     calc(1em / var(--step) / var(--step))
-    rgba(var(--dark-forest-r), var(--dark-forest-g), var(--dark-forest-b), 0.1);
+    rgba(var(--dark-forest-r), var(--dark-forest-g), var(--dark-forest-b), 0.2);
   border-radius: calc(var(--size-sm) / 2);
 
   box-shadow: inset calc(var(--size-sm) / 2) calc(var(--size-sm))

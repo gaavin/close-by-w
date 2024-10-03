@@ -11,13 +11,14 @@ export default component$(() => {
           width: "min-content",
           height: "min-content",
           background:
-            "rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.2)",
+            "rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.08)",
         }}
       >
         <h3>Live Chat</h3>
         <p>felix: yo I want a treat</p>
         <p>felix: meow</p>
-        <input></input>
+        <br />
+        <input type="text" placeholder="you:" />
         <Slot />
       </div>
     </>

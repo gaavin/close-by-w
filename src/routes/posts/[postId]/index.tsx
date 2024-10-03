@@ -6,7 +6,9 @@ import * as schema from "~/schema";
 export const usePost = routeLoader$(async (requestEvent) => {
   const { D1 } = requestEvent.platform.env;
   const db = drizzle(D1, { schema });
-  return db.query.posts.findFirst();
+  return db.query.posts.findFirst({
+    where: (post, { eq }) => eq(post.id, Number(requestEvent.params.postId)),
+  });
 });
 
 export default component$(() => {

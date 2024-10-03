@@ -36,7 +36,6 @@ export default component$(() => {
               {post.author.username} - {post.createdAt.toLocaleDateString()}
             </h2>
             <h3>ID (DESCRIPTION){post.id}</h3>
-            <div></div>
           </div>
         </a>
       ))}

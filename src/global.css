@@ -144,11 +144,9 @@ menu {
 }
 
 header {
-  display: block;
-  padding-inline: var(--size-xl);
+  display: inline-block;
 }
 
 footer {
-  display: block;
-  padding-inline: var(--size-xl);
+  display: inline-block;
 }

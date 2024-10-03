@@ -5,13 +5,19 @@ export default component$(() => {
     <>
       <div
         style={{
-          height: "20rem",
-          width: "20rem",
+          borderRadius: "0.5rem",
+          paddingInline: "var(--size-sm)",
+          paddingBlock: "var(--size-md)",
+          width: "min-content",
+          height: "min-content",
           background:
-            "rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.1)",
+            "rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.2)",
         }}
       >
-        <p>Chat!</p>
+        <h3>Live Chat</h3>
+        <p>felix: yo I want a treat</p>
+        <p>felix: meow</p>
+        <input></input>
         <Slot />
       </div>
     </>

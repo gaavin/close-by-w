@@ -90,28 +90,25 @@ main {
   padding-inline-end: var(--size-lg);
   padding-block-start: var(--size-md);
   padding-block-end: var(--size-md);
-  border: outset calc(var(--size-sm))
-    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.8);
+  border: outset calc(var(--size-sm) / var(--step))
+    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.2);
 
-  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.85);
+  background: rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.8);
   color: rgba(
     var(--dark-forest-r),
     var(--dark-forest-g),
     var(--dark-forest-b),
-    1
+    0.85
   );
 
-  text-shadow: 0 0 var(--size-lg)
-    rgba(
-      var(--moms-favourite-color-r),
-      var(--moms-favourite-color-g),
-      var(--moms-favourite-color),
-      1
-    );
+  text-shadow: calc(var(--size-sm) / 6) calc(var(--size-sm) / 6)
+    calc(1em / var(--step) / var(--step))
+    rgba(var(--dark-forest-r), var(--dark-forest-g), var(--dark-forest-b), 0.1);
   border-radius: calc(var(--size-sm) / 2);
 
-  box-shadow: inset var(--size-sm) var(--size-lg) var(--size-md)
-    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.9);
+  box-shadow: inset calc(var(--size-sm) / 2) calc(var(--size-sm))
+    calc(var(--size-lg))
+    rgba(var(--dough-r), var(--dough-g), var(--dough-b), 0.8);
 }
 
 p,

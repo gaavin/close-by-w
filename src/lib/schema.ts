@@ -1,7 +1,7 @@
 import { sql, relations } from "drizzle-orm";
 import { text, sqliteTable, integer } from "drizzle-orm/sqlite-core";
 
-const baseTable = {
+export const baseTable = {
   id: integer("id").primaryKey(),
   createdAt: integer("created_at", { mode: "timestamp_ms" })
     .notNull()

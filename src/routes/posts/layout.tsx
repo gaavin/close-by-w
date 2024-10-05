@@ -1,6 +1,6 @@
 import { component$, Slot } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
-import { drizzleFactory } from "~/lib/db";
+import { drizzleFactory } from "../../lib/db";
 
 export const usePostList = routeLoader$(async (requestEvent) => {
   const db = await drizzleFactory(requestEvent);

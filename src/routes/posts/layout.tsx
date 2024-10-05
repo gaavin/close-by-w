@@ -1,9 +1,9 @@
 import { component$, Slot } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
-import getDb from "~/db";
+import { drizzleFactory } from "~/lib/db";
 
 export const usePostList = routeLoader$(async (requestEvent) => {
-  const db = await getDb(requestEvent);
+  const db = await drizzleFactory(requestEvent);
   const posts = db.query.posts.findMany({
     columns: {
       id: true,

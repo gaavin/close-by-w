@@ -1,15 +1,34 @@
-import { component$ } from "@builder.io/qwik";
-import { routeLoader$ } from "@builder.io/qwik-city";
-import { drizzleFactory } from "~/lib/db";
-
-export const usePost = routeLoader$(async (requestEvent) => {
-  const db = await drizzleFactory(requestEvent);
-  return db.query.posts.findFirst({
-    where: (post, { eq }) => eq(post.id, Number(requestEvent.params.postId)),
-  });
-});
+import {
+  component$,
+  noSerialize,
+  Resource,
+  useResource$,
+} from "@builder.io/qwik";
+import { NavLink } from "~/components/navlink";
+import { useQuery } from "~/lib/db";
+export { useQuery };
 
 export default component$(() => {
-  const post = usePost();
-  return <p>{post.value?.content}</p>;
+  const postQuery = useResource$(() => {
+    const abortController = noSerialize(new AbortController());
+    return useQuery([abortController, {}]);
+  });
+  return (
+    <Resource
+      value={postQuery}
+      onResolved={(result) =>
+        result.map((post) => (
+          <div>
+            <NavLink href={post.id.toString()}>
+              <h1>{post.title}</h1>
+              <h2>ID (DESCRIPTION){post.id}</h2>
+            </NavLink>
+            <h3>
+              {post.authorId} - {post.createdAt.toLocaleDateString()}
+            </h3>
+          </div>
+        ))
+      }
+    />
+  );
 });

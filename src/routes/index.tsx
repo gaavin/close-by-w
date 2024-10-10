@@ -11,6 +11,8 @@ export default component$(() => {
         <br />
         please bookmark this page 🐈
       </p>
+
+      <script></script>
     </>
   );
 });

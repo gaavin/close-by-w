@@ -5,8 +5,7 @@ import {
   useResource$,
 } from "@builder.io/qwik";
 import { NavLink } from "~/components/navlink";
-import { useQuery } from "~/lib/db";
-export { useQuery };
+import getD1 from "~/lib/compat/d1";
 
 export default component$(() => {
   const postQuery = useResource$(() => {

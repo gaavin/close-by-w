@@ -1,5 +1,5 @@
 import { component$, Resource, Slot, useResource$ } from "@builder.io/qwik";
-import { useQuery } from "~/lib/db";
+import { useQuery } from "~/db";
 import { Link } from "@builder.io/qwik-city";
 
 export { useQuery };

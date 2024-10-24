@@ -1,5 +1,4 @@
 import { component$, type JSXOutput, Resource, Slot } from "@builder.io/qwik";
-import { NavLink } from "~/components/navlink";
 import { useQuery } from "~/lib/queries";
 
 export { useQuery };
@@ -15,16 +14,7 @@ export default component$(() => {
             if (!("title" in post)) {
               return output;
             }
-            return [
-              ...output,
-              <div>
-                <NavLink href={post.id.toString()}>
-                  <h1>{post.title}</h1>
-                  <h2>ID (DESCRIPTION){post.id}</h2>
-                </NavLink>
-                <h3>{post.authorId}</h3>
-              </div>,
-            ];
+            return [...output, <p>{post.content}</p>];
           }, [] as JSXOutput[])
         }
       />

@@ -31,14 +31,19 @@ export const useQuery = server$(async function <Q extends Query>(
     schema,
   });
 
-  const q = queryFunctions.get(query);
+  const { searchParams } = new URL(this.platform.request.url);
+  const limit = Number(searchParams.get("limit")) || undefined;
+  const offset = Number(searchParams.get("offset")) || undefined;
+
+  const bq = queryFunctions.get(query);
+  const q = limit && offset ? bq?.offset(offset).limit(limit) : bq;
   invariant(
     q,
     `Invalid query: ${query}, please ensure it is defined in queries.ts`
   );
 
   type T = (typeof q)["_"]["result"];
-  const result: Promise<D1Result<T>> = db.run(q) as Promise<D1Result<T>>;
+  const result = db.run(q) as Promise<D1Result<T>>;
   return result;
 });
 

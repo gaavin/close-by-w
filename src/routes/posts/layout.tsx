@@ -22,6 +22,7 @@ export default component$(() => {
                   <h1>{post.title}</h1>
                   <h2>{post.authorId}</h2>
                   <h3>ID (DESCRIPTION){post.id}</h3>
+                  <Slot name={post.id.toString()} />
                 </div>
               </Link>,
             ];

@@ -8,10 +8,10 @@ const getLocalD1DB = () => {
     const basePath = path.resolve(".wrangler");
     const dbFile = fs
       .readdirSync(basePath, { encoding: "utf-8", recursive: true })
-      .find((f) => f.endsWith(".sqlite3"));
+      .find((f) => f.endsWith(".sqlite"));
 
     if (!dbFile) {
-      throw new Error(`.sqlite3 file not found in ${basePath}`);
+      throw new Error(`.sqlite file not found in ${basePath}`);
     }
 
     const url = path.resolve(basePath, dbFile);
@@ -24,7 +24,7 @@ const getLocalD1DB = () => {
 
 const drizzleConfig = defineConfig({
   dialect: "sqlite",
-  schema: "./src/schema.ts",
+  schema: "./src/lib/schema.ts",
   out: "./migrations",
   ...(process.env.NODE_ENV === "production"
     ? {

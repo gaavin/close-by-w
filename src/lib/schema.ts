@@ -2,7 +2,7 @@ import { sql, relations } from "drizzle-orm";
 import { text, sqliteTable, integer } from "drizzle-orm/sqlite-core";
 import type { InferInsertModel, InferSelectModel } from "drizzle-orm";
 
-export const baseTable = {
+const baseTable = {
   id: integer("id").primaryKey(),
   createdAt: integer("created_at", { mode: "timestamp_ms" })
     .notNull()

@@ -1,5 +1,5 @@
 import { component$, type JSXOutput, Resource, Slot } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
+import { NavLink } from "~/components/navlink";
 import { useQuery } from "~/lib/queries";
 
 export { useQuery };
@@ -17,13 +17,13 @@ export default component$(() => {
             }
             return [
               ...output,
-              <Link href={post.id.toString()}>
-                <div>
+              <div>
+                <NavLink href={post.id.toString()}>
                   <h1>{post.title}</h1>
-                  <h2>{post.authorId}</h2>
-                  <h3>ID (DESCRIPTION){post.id}</h3>
-                </div>
-              </Link>,
+                  <h2>ID (DESCRIPTION){post.id}</h2>
+                </NavLink>
+                <h3>{post.authorId}</h3>
+              </div>,
             ];
           }, [] as JSXOutput[])
         }

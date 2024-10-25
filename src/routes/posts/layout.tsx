@@ -17,19 +17,18 @@ export default component$(() => {
             }
             return [
               ...output,
-              <Link href={post.id.toString()}>
-                <div>
+              <div>
+                <Link href={post.id.toString()}>
                   <h1>{post.title}</h1>
                   <h2>{post.authorId}</h2>
                   <h3>ID (DESCRIPTION){post.id}</h3>
-                  <Slot name={post.id.toString()} />
-                </div>
-              </Link>,
+                </Link>
+                <Slot />
+              </div>,
             ];
           }, [] as JSXOutput[])
         }
       />
-      <Slot />
     </>
   );
 });

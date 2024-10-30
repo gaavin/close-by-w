@@ -1,10 +1,7 @@
 import { component$, type JSXOutput, Resource, Slot } from "@builder.io/qwik";
-import { useQuery } from "~/lib/queries";
-
-export { useQuery };
 
 export default component$(() => {
-  const postsQuery = useQuery("posts");
+  const postsQuery = useThanosQuery("posts" as keyof );
   return (
     <>
       <Resource

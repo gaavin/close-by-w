@@ -11,7 +11,7 @@ export default component$(() => {
       <Resource
         value={postsQuery}
         onResolved={(result) =>
-          result.results.flat().reduce((output, post) => {
+          result.flat().reduce((output, post) => {
             if (!("title" in post)) {
               return output;
             }

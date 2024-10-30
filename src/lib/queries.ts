@@ -1,50 +1,41 @@
 import { server$ } from "@builder.io/qwik-city";
-import { QueryBuilder } from "drizzle-orm/sqlite-core";
-import { drizzle } from "drizzle-orm/d1";
+import { drizzle, type DrizzleD1Database } from "drizzle-orm/d1";
 import * as schema from "~/lib/schema";
 import getD1 from "../lib/compat/d1";
-import invariant from "tiny-invariant";
-import type { PlatformCloudflarePages } from "@builder.io/qwik-city/middleware/cloudflare-pages";
+import { type PlatformCloudflarePages } from "@builder.io/qwik-city/middleware/cloudflare-pages";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const queries = ["posts", "users"] as const;
-const postsQuery = new QueryBuilder().select().from(schema.posts);
-const usersQuery = new QueryBuilder().select().from(schema.users);
+const queries = {
+  Users: (db: DrizzleD1Database<typeof schema>) =>
+    db.select().from(schema.users),
+  Posts: (db: DrizzleD1Database<typeof schema>) =>
+    db.select().from(schema.posts),
+} as const;
 
-type QueryFunctionMap = {
-  posts: typeof postsQuery;
-  users: typeof usersQuery;
-};
+type Query<
+  Q extends keyof TQueries,
+  TQueries = typeof queries,
+  TQuery = (typeof queries)[Q],
+> = Extract<TQueries, TQueries[Q]>;
 
-export const queryFunctions = new Map<Query, QueryFunctionMap[Query]>([
-  ["posts", postsQuery],
-  ["users", usersQuery],
-]);
+type QP = Query<"Posts">;
 
-export const useQuery = server$(async function <Q extends Query>(
+export const useQuery = server$(async function <
+  K extends keyof QueryMap,
+  T = QueryResultMap[K],
+>(
   this: {
     platform: PlatformCloudflarePages;
   },
-  query: Q
-) {
-  const db = drizzle(await getD1(this), {
+  query: K
+): Promise<T> {
+  const db = drizzle(await getD1(this.platform), {
     schema,
   });
 
-  const { searchParams } = new URL(this.platform.request.url);
-  const limit = Number(searchParams.get("limit")) || undefined;
-  const offset = Number(searchParams.get("offset")) || undefined;
-
-  const bq = queryFunctions.get(query);
-  const q = limit && offset ? bq?.offset(offset).limit(limit) : bq;
-  invariant(
-    q,
-    `Invalid query: ${query}, please ensure it is defined in queries.ts`
-  );
-
-  type T = (typeof q)["_"]["result"];
-  const result = db.run(q) as Promise<D1Result<T>>;
-  return result;
+  const qFn: QueryFunction<K> = queries[query] satisfies QueryFunction<K>;
+  const q: T = (await qFn(db)) as T;
+  return q;
 });
 
-export type Query = (typeof queries)[number];
+const sadas = await useQuery("Posts");
+// 'sadas' now has the correct type for the "Posts" query result

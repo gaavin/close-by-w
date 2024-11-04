@@ -2,9 +2,8 @@ import { component$, type JSXOutput, Slot } from "@builder.io/qwik";
 import { Link, routeLoader$ } from "@builder.io/qwik-city";
 import { drizzleFactory, pagination } from "~/lib/db";
 
-export const usePosts = routeLoader$(async (requestEvent) => {
-  const db = drizzleFactory(requestEvent.env);
-  const posts = await db.query.posts.findMany({
+export const usePosts = routeLoader$((requestEvent) =>
+  drizzleFactory(requestEvent.env).query.posts.findMany({
     ...pagination(requestEvent.query),
     columns: {
       content: false,
@@ -12,9 +11,8 @@ export const usePosts = routeLoader$(async (requestEvent) => {
     with: {
       author: true,
     },
-  });
-  return posts;
-});
+  })
+);
 
 export default component$(() => {
   const { value: posts } = usePosts();

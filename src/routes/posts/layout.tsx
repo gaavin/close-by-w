@@ -1,11 +1,9 @@
 import { component$, type JSXOutput, Slot } from "@builder.io/qwik";
 import { Link, routeLoader$ } from "@builder.io/qwik-city";
-import invariant from "tiny-invariant";
 import { drizzleFactory, pagination } from "~/lib/db";
 
 export const usePosts = routeLoader$(async (requestEvent) => {
   const db = drizzleFactory(requestEvent.env);
-  invariant(db);
   const posts = await db.query.posts.findMany({
     ...pagination(requestEvent.query),
     columns: {

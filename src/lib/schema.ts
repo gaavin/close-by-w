@@ -1,6 +1,5 @@
 import { sql, relations } from "drizzle-orm";
 import { text, sqliteTable, integer } from "drizzle-orm/sqlite-core";
-import type { InferInsertModel, InferSelectModel } from "drizzle-orm";
 
 const baseTable = {
   id: integer("id").primaryKey(),
@@ -37,6 +36,3 @@ export const postsRelations = relations(posts, ({ one }) => ({
     references: [users.id],
   }),
 }));
-
-export type Post = InferSelectModel<typeof users>;
-export type NewPost = InferInsertModel<typeof users>;

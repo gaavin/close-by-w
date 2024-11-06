@@ -1,6 +1,6 @@
 import { drizzle } from "drizzle-orm/d1";
 import * as schema from "./schema";
-import { type PlatformCloudflarePages } from "@builder.io/qwik-city/middleware/cloudflare-pages";
+import type { PlatformCloudflarePages } from "@builder.io/qwik-city/middleware/cloudflare-pages";
 
 let getDevD1: any = () => {};
 
@@ -21,14 +21,7 @@ if (import.meta.env.DEV) {
   };
 }
 
-export const drizzleFactory = (env: PlatformCloudflarePages["env"]) => {
-  if (env?.get("D1")) {
-    return drizzle(env.get("D1"), { schema });
-  }
-  return drizzle(getDevD1(), { schema });
-};
-
-export const withPagination = (query: URLSearchParams) => ({
-  limit: Number(query.get("limit")) || undefined,
-  offset: Number(query.get("offset")) || undefined,
-});
+export const drizzleFactory = (env: PlatformCloudflarePages["env"]) =>
+  env?.has("D1")
+    ? drizzle(env.get("D1"), { schema })
+    : drizzle(getDevD1(), { schema });

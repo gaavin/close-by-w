@@ -1,24 +1,18 @@
-import { component$, Slot } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
+import { sql } from "drizzle-orm";
 import { drizzleFactory } from "~/lib/db";
+import * as schema from "~/lib/schema";
 
-export const usePost = routeLoader$(async (requestEvent) => {
-  const db = drizzleFactory(requestEvent.env);
-  const post = await db.query.posts.findFirst({
-    columns: {
-      content: true,
-    },
-  });
-  return post;
-});
+export const usePost = routeLoader$(({ params, env }) =>
+  drizzleFactory(env)
+    .select()
+    .from(schema.posts)
+    .where(sql`${schema.posts.id} = ${params["postId"]}`)
+    .get()
+);
 
 export default component$(() => {
   const { value: post } = usePost();
-
-  return (
-    <>
-      <p>{post?.content}</p>
-      <Slot />
-    </>
-  );
+  return <p>{post?.content}</p>;
 });

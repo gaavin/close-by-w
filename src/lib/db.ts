@@ -28,7 +28,7 @@ export const drizzleFactory = (env: PlatformCloudflarePages["env"]) => {
   return drizzle(getDevD1(), { schema });
 };
 
-export const pagination = (query: URLSearchParams) => ({
+export const withPagination = (query: URLSearchParams) => ({
   limit: Number(query.get("limit")) || undefined,
   offset: Number(query.get("offset")) || undefined,
 });
